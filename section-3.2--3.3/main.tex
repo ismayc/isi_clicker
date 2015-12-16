@@ -1,0 +1,233 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{\textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 3.2-3.3 }
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{The act of retrieving learning from memory has two profound benefits. One, it tells you what you know and don’t know, and therefore where to focus further study to improve the areas where you’re weak. Two, recalling what you have learned causes your brain to re-consolidate the memory, which strengthens its connections to what you already know and makes it easier for you to recall in the future.}{Peter C. Brown, \textit{Make It Stick}}
+\end{frame}
+
+
+\begin{frame}{What's in the Interval?}
+\question Suppose a 95\% confidence interval for a population proportion is found using the 2SD method or the theory-based method.  Which of the following will definitely be contained in that interval?
+
+\begin{click}
+	\item The $p$-value
+    \item The proportion of successes in the population
+    \item The proportion of successes in the sample %Correct
+    \item All of the above
+    \item None of the above
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Coke or Pepsi?}
+A 95\% confidence interval for the proportion of Ripon College students that like Coca-Cola more than Pepsi is determined to be (0.62, 0.90).  \question What is the correct combination of the statistic collected by the researchers and the SD of this statistic?
+
+\begin{click}
+	\item $\pi = 0.50$, $SD = 0.28$
+    \item $\hat{p} = 0.62$, $SD = 0.14$
+    \item $\hat{p} = 0.76$, $SD = 0.14$
+    \item $\hat{p} = 0.76$, $SD = 0.07$ %Correct
+    \item None of the above.
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Interpret CI}
+A 95\% confidence interval for the proportion of Ripon College students that like Coca-Cola more than Pepsi is determined to be (0.62, 0.90). \smallskip
+\question What is the best interpretation of this CI?
+
+\begin{click}
+	\item We are 95\% confident that between 62\% and 90\% of the students in this sample prefer Coke to Pepsi.
+    \item 95\% of all random samples of this size will show that between 62\% and 90\% of the students in the sample prefer Coke to Pepsi.
+    \item We are 95\% confident that between 62\% and 90\% of all Ripon College students prefer Coke to Pepsi. %correct
+    \item 95\% of all random samples of this size will produce this CI.
+    \item None of the above.
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Using the Applet and the 2SD Method}
+NBC News recently conducted a poll in regards to the Iowa Democratic Presidential Caucus and it was found that 68\% of those 321 surveyed favored Hillary Clinton as the Democratic candidate for president in 2016.  Does this provide evidence that more than 65\% of Iowans favor Clinton?
+
+\smallskip
+
+Use this information and the \textbf{One Proportion} applet to find a confidence interval for the true proportion of Iowans that support Clinton in the 2016 primary.  
+
+\question Select the interval below that most closely matches your result.
+
+\begin{multicols}{2}
+\begin{click}
+	\item $0.68 \pm 0.025$
+    \item $0.65 \pm 0.03$
+    \item $0.68 \pm 0.05$ %Correct
+    \item $218 \pm 16.5$ %uses X not p-hat
+    %\item $0.68 \pm 0.165$ %See last comment
+    \item (0.72, 0.64)
+   % \item None of the above
+\end{click}
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Can we use Theory-Based Inference?}
+In the similar poll as in last question conducted by Loras College in Iowa, Bernie Sanders was favored by 4\% of 242 Iowans surveyed as the Democratic candidate for president in 2016.  
+
+\question Can the \textbf{Theory-Based Inference} applet be used to reliably find a confidence interval for the corresponding parameter?
+
+\begin{click}
+	\item Yes, we have far more than 20 observational units in our sample.
+    \item Yes, we have more than 10 surveyed Iowans that don't favor Sanders.
+    \item No, we have fewer than 10 surveyed Iowans that favor Sanders. %Correct
+    \item No, we are missing information required to use that applet.
+\end{click}
+
+\end{frame}
+
+
+\begin{frame}{Evidence as Well?}
+In the similar poll as in last question conducted by Loras College in Iowa, Bernie Sanders was favored by 4\% of 242 Iowans surveyed as the Democratic candidate for president in 2016.  Do we have evidence that fewer than 10\% of voters in Iowas prefer Sanders?
+
+\question Use the \textbf{One Proportion} applet and the 2SD method to calculate a 95\% confidence interval for $\pi$.  Use this result to determine whether we have support for the conjecture.
+
+\begin{click}
+	\item Yes, 4\% is less than 10\% so we must have evidence.
+    \item Yes, 10\% is larger than the upper limit of the confidence interval centered at the statistic. %Correct
+    \item No, 4\% is included in the confidence interval centered at 10\%.
+    \item No, simulation-based methods require validity conditions that weren't met so we cannot have evidence against the null.
+    \item We cannot answer this question without calculating the $p$-value.
+\end{click}
+
+\end{frame}
+
+%%%%%% Not sure about this scenario\begin{frame}
+%An inspector inspects large truckloads of potatoes to determine the proportion $\pi$ in the shipment with major defects prior to using the potatoes to make potato chips.  Unless there is clear evidence ($\alpha=0.05$) that this proportion, $\pi$, is less than 0.10, he will reject the shipment.  He will test the hypotheses\smallskip
+
+%$H_0: \pi = 0.10, H_a: \pi < 0.10$.\smallskip
+
+%He selects an SRS (simple random sample) of 100 potatoes from the roughly 3000 potatoes on the truck. Suppose that 6 of the potatoes sampled are found to have major defects.
+
+%\end{frame}
+
+% \begin{frame}{Margin of Error}
+% \question In a survey of 1,000 television viewers, 40\% said they watch network news programs.  Suppose we are interested in finding out if a minority of viewers watch network news programs.  For a 95\% CI, which of the following would be legitimate values for the margin of error?
+% \begin{enumerate}[A]
+%    \item $2\,\sqrt[]{0.4\times 0.6/1000}$
+%    \item $2\,\sqrt[]{0.5\times 0.5/1000}$
+%    \item $1.96\,\sqrt[]{0.4\times 0.6/1000}$
+%    \item Simulate a null model with a process probability of $0.40$, find the standard deviation (SD) of the null distribution of simulated sample proportions, and use $2\,$SD for the margin of error.
+%    \item All of the above. %Correct
+% \end{enumerate}
+% \end{frame}
+
+\begin{frame}{Build it!}
+\question When 293 college students are randomly selected and surveyed, it is found that 114 own a car. Use any appropriate method discussed in Sections 3.2 and 3.3 to construct a 99\% confidence interval for the percentage of all college students who own a car. 
+%Use an applet, or the fact that the multiplier for 99\% is $2.576$.
+
+%I took this from online testbank, not sure where distracters come from
+
+\begin{enumerate}[A]
+   \item $(0.333,0.445)$
+   \item $(0.342, 0.436)$
+   \item $(0.316,0.445)$
+   \item $(0.323,0.455)$
+   \item $(0.316,0.462)$% Correct
+\end{enumerate}
+\end{frame}
+
+% \begin{frame}{Width of CI}
+% If necessary, use the applets to build intuition to answer the following question.  \question The width of a confidence interval for a proportion $\pi$ is
+% \begin{enumerate}[A]
+%    \item the same whether the sample size is $500$ or $1000$.
+%    \item narrower for a sample size of 50 than for a sample size of 100.
+%    \item wider for 90\% confidence than for 95\% confidence.
+%    \item narrower when the sample proportion is 0.90 than when the sample proportion is 0.45.
+%    \item narrowest when the sample proportion is 0.5. %Correct, I think?
+%    \item None of the above.
+% \end{enumerate}
+% \end{frame}
+
+\begin{frame}{CI for a Mean}
+\question How many unpopped kernels are left when you pop a bag of microwave popcorn? The quality control personnel at a company that manufactures microwave popcorn take a random sample of 50 bags of popcorn. They pop each bag in a microwave and then count the number of unpopped kernels yielding $\overline{x}=18$ and $s=15$ unpopped kernels. Use the appropriate formula to give a 2SD 95\% CI for the mean number of unpopped kernels for all bags of this microwave popcorn.
+\begin{enumerate}[A]
+   \item $(-12.0, 48.0)$%No, x-bar pm 2*s
+   \item $(13.8, 22.2)$%Correct
+   \item $(15.9, 20.1)$%No 2 in margin of error
+   \item $(17.7, 18.3)$%divide by n not sqrt n
+   \item $(17.5, 18.6)$%m = sqrt(s/n)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Different SDs}
+\question Typically, how much sugar is in a low calorie cookie? You take a random sample of 25 low calorie cookies and test them in a lab, finding a mean sugar content of $\overline{x}=3.2$ grams and a standard deviation of 1.1 grams of sugar. If 9 of your classmates each take their own random sample of 25 low calorie cookies, producing their own values of $\overline{x}$ and $s$ for their samples, what would you predict for the SD of the 10 $\overline{x}$ values?
+\begin{enumerate}[A]
+   \item It should be close to $\dfrac{1.1}{\sqrt[]{25}}\approx 0.22$ grams of sugar since $SE(\overline{x})=\dfrac{s}{\sqrt[]{n}}$. %Correct
+   \item It should be close to $10\times 1.1 = 11$ grams of sugar, since there are 10 samples.
+   \item It should be close to $s=1.1$ since $s$ should be a good estimate of the cookie to cookie variability for all cookies.
+   \item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Key Ideas to Understand from Chapter 2 and Sections 3.1-3.3}
+\begin{multicols}{2}
+\begin{itemize}
+	\item Observational unit
+    \item Variable
+	\item $p$-value
+	\item Sample
+    \item Population
+    \item Statistic
+    \item Parameter
+    \item Left-skewed/Right-skewed
+    \item Median/Mean
+    \item Type I/Type II errors
+    \item Significance level
+    \item Confidence level
+    \item Confidence interval
+    \item Center of the confidence interval
+    \item Margin-of-error
+    \item 2SD Method for CIs
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}

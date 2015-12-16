@@ -1,0 +1,206 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 8.1 and 8.2 }
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Learning is not attained by chance, it must be sought for with ardor and diligence.}{Abigail Adams}
+
+\end{frame}
+
+\begin{frame}{Xylitol Gum and Ear Infections}
+%From Utts, Mind on Statistics, 4th edition
+Xylitol is a food sweetener that may also have antibacterial properties. A Finland study was designed to test if chewing gum containing xylitol could reduce the risk of middle ear infections in children in daycare centers. The researchers divided a representative group of 533 daycare children into three groups. Group 1 regularly chewed gum containing xylitol, group 2 took xylitol lozenges, and group 3 regularly chewed gum without xylitol. Subjects were followed for three months and for each child the researchers recorded whether or not the child had an ear infection.
+\end{frame}
+
+\begin{frame}{Results}
+The results are shown in the table below.
+\begin{center}
+\begin{tabular}
+[c]{|c||c|c|c|c|}\hline
+Ear Inf? & Lozenge & Xylitol Gum & Placebo & Total\\\hline
+Yes & 39 (22.2\%) & 29 (16.2\%) & 49 (27.6\%) & 117 (22\%)\\\hline
+No & 137 (77.8\%) & 150 (83.8\%) & 129 (72.5\%) & 416 (78\%)\\\hline
+Total & 176 & 179 & 178 & 533\\\hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units?
+\begin{click}
+   \item Gum and lozenges
+   \item Ear infections
+   \item Finish children in daycare centers% Correct
+   \item Whether or not xylitol can reduce the number of ear infections in Finnish daycare children
+   \item None of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Response Variable}
+\question What is the response variable?
+\begin{click}
+   \item Whether or not a subject developed an ear infection.% Correct
+   \item The proportion of children that developed an ear infection.
+   \item The treatment given, xyltiol gum, xylitol lozenge, or placebo gum.
+   \item Whether or not xylitol can reduce the number of ear infections in Finnish daycare children.
+   \item The mean absolute difference in proportions.
+\end{click}
+\end{frame}
+
+\begin{frame}{Single Summary}
+\question If one wanted to summarize the overall proportion of subjects that developed an ear infection, which of the following would be the best statistic to use?
+\begin{click}
+   \item $\hat{p}_{placebo}$, since this group really did not receive any treatment.
+   \item $\hat{p}_{lozenge}$, since it is in between the other two conditional proportions.
+   \item The average proportion, $\dfrac{\hat{p}_{lozenge}+\hat{p}_{gum}+\hat{p}_{placebo}}{3}=0.22$.
+   \item The total proportion, $\hat{p} = \frac{117}{533} = 0.2195$.
+\end{click}
+\end{frame}
+
+\begin{frame}{The MAD Statistic}
+\question What is the value of the MAD statistic for the xylitol gum study?
+\begin{click}
+   \item $0.22$% Just the overall proportion, also (p1+p2+p3)/3
+   \item $0.075$% Correct
+   \item $0.226$% The differences added but not divided by 3
+   \item $0.038$% The average deviation from p-hat = 0.22
+   \item $0.66$% The sum of the cond. proportions
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Null Hypothesis}
+\question What would the null hypothesis be if we wanted to test all three proportions to see if they are equal?
+\begin{click}
+   \item $H_0: \hat{p}_{gum} = \hat{p}_{lozenge} = \hat{p}_{placebo}$
+   \item $H_0:MAD = 0.076$
+   \item $H_0:\pi_{earInfection} = 0.5$
+   \item $H_0:\pi_{earInfection} - \pi_{noInfection} = 0$
+   \item $H_0:\pi_{gum} - \pi_{lozenge} - \pi_{placebo} = 0$ 
+   \item None of the above% Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Alternative Hypothesis}
+\question What would the alternative hypothesis be if we wanted to test all three proportions to see if they are equal?
+\begin{click}
+   \item $H_a:$ there is an association between the treatments and ear infections.
+   \item $H_a: \pi_{gum} \neq \pi_{lozenge} \neq \pi_{placebo}$
+   \item $H_a:\pi_{earInfection} - \pi_{noInfection} \neq 0$
+   \item $H_a:$ at least two of $\pi_{gum}, \pi_{lozenge}$ and $\pi_{placebo}$ are different.
+   \item Two of the above are correct.% Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Expected Counts}
+\question True or False, the expected number of ear infections in the xylitol gum group is $\hat{p}_{earInfection} \times n_{gum} = \frac{117}{533} \times 179 \approx 39.29$ (all the arithmetic is correct).
+\begin{click}
+   \item True and I am confident
+   \item True but I am not too confident
+   \item False and I am confident
+   \item False but I am not too confident
+\end{click}
+\end{frame}
+
+\begin{frame}{CI and Expected Counts}
+\question Values of the counts $Observed - Expected$ are shown in the table below. The Multiple Proportions applet produced CIs for $\pi_{lozenge} - \pi_{gum}, \pi_{gum} - \pi_{placebo}$ and $\pi_{lozenge} - \pi_{placebo}$ to be (in random order) $(-0.198, -0.028),(-0.144, 0.036)$ and $(-0.022, 0.141)$, which is the CI for $\pi_{lozenge} - \pi_{gum}$?
+\smallskip
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.33\textwidth}
+   \begin{click}
+      \item $(-0.198, -0.028)$%No, all negative values
+      \item $(-0.144, 0.036)$%No, mostly negative values
+      \item $(-0.022, 0.141)$% Correct, mostly positive values
+   \end{click}
+\end{column}
+\begin{column}{.67\textwidth}
+      \pic{gumtable.PNG}{0.95}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{$p$--value}
+\question The study had $MAD \approx 0.076$; 500 simulated values of the MAD statistic are shown in the image below, what can you say about the $p$--value for this study?
+\smallskip
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.35\textwidth}
+   \begin{click}
+      \item $p < 0.01$
+      \item $0.01 < p < 0.05$
+      \item $0.05 < p < 0.1$% Correct
+      \item $0.1 < p < 0.5$
+      \item $p > 0.5$
+   \end{click}
+\end{column}
+\begin{column}{.65\textwidth}
+      \pic{gumsimul.PNG}{0.95}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\question The chi-squared contributions $\left ( \frac{(observed - expected)^2}{expected} \right)$ for the xylitol gum group ear infections, and no ear infections are 2.70 and 0.76 respectively, which is the best interpretation of these values?
+\begin{click}
+   \item Both are much larger than 0.05 and therefore represent no evidence against our null hypothesis.
+   \item Both values are larger than expected and the ear infection contribution of 2.70 is more significant than the no infection contribution of 0.76.% Correct
+   \item Both values are quite small and are essentially negligible in terms of the total chi-square statistic.
+   \item The smaller the contribution, the more evidence against the null hypothesis, so 0.76 is more significant than 2.70.
+\end{click}
+\end{frame}
+
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 8 }
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Chi-square distribution
+    \item Chi-square statistic
+    \item MAD derived statistic
+    \item Validity conditions for chi-square test
+    \item Pairwise confidence intervals
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

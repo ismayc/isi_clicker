@@ -1,0 +1,277 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 9.1 and 9.2}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{In learning you will teach, and in teaching you will learn.}{Phil Collins}
+
+\end{frame}
+
+\frame{
+\frametitle{Conserving Hotel Towels}
+A recent study (Goldstein et al., 2008) conducted a randomized experiment to investigate how different phrasings on signs placed on bathroom towel racks impacted guests towel reuse behavior. In particular, the researchers were interested in evaluating how messages that communicated different types of social norms impacted towel reuse. One week prior to a guest staying in the room, rooms at a particular hotel were randomly assigned to receive one of the following five messages on a sign hung on the towel bar in the room:
+}
+
+\frame{
+\frametitle{Conserving Hotel Towels}
+1: ``HELP SAVE THE ENVIRONMENT. You can show your respect for nature and help save the environment by reusing your towels during your stay." (No social norm)\\
+2: ``JOIN YOUR FELLOW GUESTS IN HELPING TO SAVE THE ENVIRONMENT. 75\% of the guests participated in our new resource savings program by using their towels more than once. You can join your fellow guests in this program to help save the environment by reusing your towels during your stay." (Guest identity norm)\\
+3: ``JOIN YOUR FELLOW GUESTS IN HELPING TO SAVE THE ENVIRONMENT. 75\% of the guests who stayed in this room (\#xxx) participated in our new resource savings program by using their towels more than once. You can join your fellow guests in this program to help save the environment by reusing your towels during your stay." (Same room norm)
+
+}
+
+\frame{
+\frametitle{Conserving Hotel Towels}
+4: ``JOIN YOUR FELLOW CITIZENS IN HELPING TO SAVE THE ENVIRONMENT. 75\% of the guests participated in our new resource savings program by using their towels more than once. You can join your fellow citizens in this program to help save the environment by reusing your towels during your stay." (Citizens norm)\\
+5: ``JOIN THE MEN AND WOMEN WHO ARE HELPING TO SAVE THE ENVIRONMENT. 76\% of the women and 74\% of the men participated in our new resource savings program by using their towels more than once. You can join the other men and women in this program to help save the environment by reusing your towels during your stay." (Gender identity norm)
+
+\vspace*{0.1in}
+
+Data were collected on 1595 instances of potential towel reuse. For each of the 1595 instances, room attendants recorded whether or not the hotel guest reused their towels.
+
+}
+
+
+\frame{
+\frametitle{Observational Units}
+
+\question What are the observational units?
+\begin{enumerate}[A]
+	\item Hotel attendants
+	\item Signs
+	\item Towels
+	\item Hotel guests %Correct
+    \item None of the above
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Levels of Variables}
+\question How many levels (different groups) do the explanatory and response variables have (Explanatory, Response)?
+\begin{enumerate}[A]
+	\item 2, 2
+	\item 5, 2 %Correct
+	\item 2, 5
+	\item 5, 5
+    \item Unknown since the response is quantitative
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Explanatory Variable}
+\question Identify the explanatory variable.
+\begin{enumerate}[A]
+	\item Whether or not guests reused their towels
+	\item Gender
+	\item Message type on signs %Correct
+	\item Whether or not resource savings program was implemented
+    \item None of the above
+\end{enumerate}
+}
+
+
+
+\frame{
+\frametitle{Researchers' Hypothesis}
+\question State the alternative hypothesis to be investigated with this study. 
+\begin{enumerate}[A]
+	\item $H_a: \pi_1 \ne \pi_2 \ne \pi_3 \ne \pi_4 \ne \pi_5$
+	\item $H_a:  \pi_1 \ne \pi_2 = \pi_3 = \pi_4 = \pi_5$
+	\item $H_a:$  At least one conditional population proportion is different %Correct
+    \item Two of the above are true
+    \item None of the above
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Conditional Proportions}
+  %Using the table below calculate the conditional proportions of those who reused towels for each level of message type. 
+\begin{tabular}{l | p{0.4in} | p{0.4in} | p{0.4in} | p{0.4in} | p{0.4in} || p{0.4in}}
+  %     &   &    &    &    &    \\
+           & None (1) & Same Room (2)  & Citizen (3)  & Gender (4)  & Guest (5) & \textit{Total} \\ \hline
+\textbf{Reuse Towel}    & 113 & 151 & 145 & 127 & 150 & 686 \\
+\textbf{No reuse} & 192 & 155  & 189 & 183 & 190  & 909\\ \hline \hline
+\textit{Total}        & 305 & 306 & 334 & 310 & 340 & 1595
+\end{tabular}
+
+\medskip 
+
+\question Which message produced the largest proportion of towel reuse?  Which produced the smallest?
+\begin{enumerate}[A]
+	\item Largest = Same Room, Smallest = Citizen 
+	\item Largest = Guest, Smallest = Gender 
+	\item Largest = Same Room, Smallest = None %Correct
+	\item Largest = Guest, Smallest = None 
+    \item None of the above
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Which Applet?}
+\question Given the data for this problem, which applet do we use to construct a simulated null distribution using the $MAD$ statistic based on the conditional proportions on the last slide? 
+\begin{enumerate}[A]
+	\item Two Proportions
+	\item Multiple Means
+	\item Theory-Based Inference
+	\item Multiple Proportions %Correct
+    \item None of the above
+\end{enumerate}
+}
+
+\frame{
+\frametitle{$P$-value}
+\question After selecting \textbf{reuse} as a Success and selecting \textbf{MAD} from the \textbf{Statistic} dropdown, we obtain an Observed $MAD$ of 0.055.  Use this information and the 1000 simulations below to estimate the $p$-value.
+
+\begin{columns}[c] 
+    \column{0.3\textwidth} 
+
+\begin{enumerate}[A]
+	\item 0.900
+	\item 0.421
+	\item 0.205
+    \item 0.055
+	\item 0.031 %Correct
+\end{enumerate}
+
+\column{0.7\textwidth}
+\pic{hotelTowels.png}{0.6}
+\end{columns}
+
+}
+
+
+\frame{
+\frametitle{Which diet is best?}
+An article in the \textit{Journal of the American Medical Association} reported on a randomized, comparative experiment in which 160 American adults were randomly assigned to one of four popular diet plans: Atkins, Ornish, Weight Watchers, and Zone (40 subjects per diet). These subjects were recruited through newspaper and television advertisements in the greater Boston area; all were overweight or obese with body mass index values between 27 and 42.  Data for the 93 subjects who completed the 12-month study contains which diet the subject was on and the weight loss in kilograms (positive values indicate weight loss and negative values indicate weight gain).
+}
+
+\frame{
+\frametitle{Types of Variables}
+\question  Identity the correct pair of explanatory and response variables with their type, respectively.
+\begin{enumerate}[A]
+	\item Quantitative, Quantitative
+	\item Quantitative, Categorical
+	\item Categorical, Quantitative %Correct
+	\item Categorical, Categorical
+    \item None of the above
+\end{enumerate}
+}
+
+\frame{
+\frametitle{Null Hypothesis}
+\question  State the null hypothesis for this study.
+\begin{enumerate}[A]
+	\item The four mean weight losses are not all equal.
+	\item $\mu_{Atkins} - \mu_{Ornish} - \mu_{WW} - \mu_{Zone} = 0$
+	\item The choice of diet makes a difference on mean weight loss.
+	\item $\mu_i \ne \mu_j$ for at least one pair $(i, j)$
+    \item None of the above %Correct
+\end{enumerate}
+}
+
+% \frame{
+% \frametitle{Dotplots}
+% \question
+%  Describe what the dotplots tell us about the effectiveness of the four diet plans in aiding weight loss.
+
+% \begin{columns}
+% \column{0.5\textwidth}
+% \begin{enumerate}[A]
+% 	\item The group centers vary greatly.
+% 	\item The within-group variability is quite small.
+% 	\item The choice of diet makes no difference on mean weight loss.
+% 	\item The choice of diet makes a difference on mean weight loss.
+% \end{enumerate}
+
+% \column{0.5\textwidth}
+% \pic{weightLoss.png}{0.75}
+% \end{columns}
+% }
+
+\frame{
+
+\frametitle{$F$ Statistic}  
+\question
+For this problem, we have an observed $F$ statistic of 0.54.  Based on the picture, is there evidence that diet plan affects weight loss?
+
+
+\begin{columns}
+\column{0.55\textwidth}
+\begin{enumerate}[A]
+	\item Yes, the $p$-value is very large. 
+	\item No, the $p$-value is very small. 
+	\item No, the $p$-value is very large. %Correct
+	\item Yes, the $p$-value is very small. 
+\end{enumerate}
+
+\column{0.45\textwidth}
+\pic{fStat.png}{0.6}
+\end{columns}
+}
+
+\frame{
+{Generalization}
+\question Suppose that we actually did find significance.  To what population could we infer our results?
+
+\begin{enumerate}[A]
+	\item All American adults, since there was random assignment.
+    \item All adults in Boston, since there was random assignment.
+    \item All overweight or obese adults in Boston, since there was random assignment.
+    \item All overweight or obese adults that read the newspaper or watch TV, since there was random assignment.
+    \item None of the above. %Random assignment doesn't matter for generalization.  We can only infer to the subjects in the sample since they were recruited, not randomly selected
+\end{enumerate}
+
+
+}
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 9 }
+%\begin{multicols}{2}
+\begin{itemize}
+	\item ANOVA test
+	\item $F$-distribution / $F$-statistic
+    \item Follow-up analysis
+    \item Tactile simulation steps (cards/dice/etc.)
+    \item $p$-value!!!!
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,136 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+
+\title{Section 2.3}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{A short study break—five, ten, twenty minutes to check in on Facebook, respond to a few emails, check sports scores—is the most effective technique learning scientists know of to help you solve a problem when you’re stuck.}{Benedict Carey, \textit{How We Learn: The Surprising Truth About When, Where, and Why It Happens}}
+\end{frame}
+
+\begin{frame}{Significance level}
+	\question Identify for which of the following $p$-values you would reject the null hypothesis at a significance level of $\alpha = 5\%$.
+\begin{enumerate}[A]
+	\item $p$-value = 0.078
+    \item $p$-value = 0.045
+    \item $p$-value = 0.5
+    \item All of the above
+    \item A and B but not C
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Reject or not?}
+	\question Identify for which of the following significance levels you would FAIL TO REJECT the null hypothesis if your $p$-value is 0.064.
+\begin{enumerate}[A]
+	\item $\alpha = 0.05$
+    \item $\alpha = 0.10$
+    \item $\alpha = 7\%$
+    \item All of the above
+    \item B and C but not A
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Buzz's errors (Type I)}
+In Example 1.1, we looked at a study to investigate whether dolphins could communicate. In doing so, we tested whether Buzz, one of the dolphins, could push the correct button more
+than 50\% of the time in the long run. \question Describe what a type I error would be in this study.
+\begin{enumerate}[A]
+	\item We find strong evidence that Buzz is not guessing, but he is guessing.
+    \item We have little to no evidence that Buzz is guessing, but he is guessing.
+    \item We find strong evidence that Buzz is guessing, but he actually is not guessing.
+    \item We find evidence that Buzz pushes the correct button more than 50\% of the time, but he, in fact, pushes it much less than 50\%.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Buzz's errors (Type II)}
+In Example 1.1, we looked at a study to investigate whether dolphins could communicate. In doing so, we tested whether Buzz, one of the dolphins, could push the correct button more
+than 50\% of the time in the long run. \question Describe what a type II error would be in this study.
+\begin{enumerate}[A]
+	\item We find strong evidence that Buzz is not guessing, but he is guessing.
+    \item We find that guessing is a plausible reason for Buzz's choices, but he actually is not guessing.
+    \item We reject that Buzz has a 50\% chance of pushing the correct button, when, in fact, he does have a 50\% chance.
+    \item We have good evidence that Buzz pushes the correct button exactly 50\% of the time, but he, in fact, pushes it much less than 50\%.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Error tradeoff}
+\question The significance level $\alpha$ determines the probability of making a Type I error. Errors are bad.
+So, why don't we always set alpha to be extremely small, such as 0.0001?
+\begin{enumerate}[A]
+	\item It's a matter of convention that we almost always use 5\%.
+    \item Setting it too small would also decrease the probability of a Type II error too low to be safe.
+    \item Setting it that small will increase the type II error rate leading to many missed opportunities.
+    \item It is not mathematically possible to set the significance level to anything below 0.01.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Error Type}
+FlyHigh Airlines is considering the cancellation of service for their weekday flights from Green Bay to Phoenix due to low ticket sales. They have determined that if these flights average 70\% occupancy (at least 70\% of all seats on these flights are full), then the flights should be continued, but if the average flight is significantly below 70\% occupancy ($\alpha=0.05$), then the flight should be cancelled.\smallskip
+
+\question If they end up canceling the flights, even though they do average 70\% occupancy in reality, what kind of error have they made?
+\begin{enumerate}[A]
+	\item Type I, and I am confident.
+    \item Type I, I think.
+    \item Type II, and I am confident.
+    \item Type II, I think.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Error Type}
+Jimmy has been eating lunch at Jimmy John's and believes he is spending too much money. He decides he can afford no more than \$10 for lunch. He runs a test of $H_0:\mu=10$ against $H_a:\mu>10$ at the $\alpha=0.10$ level, where $\mu$ represents the mean amount of money he spends on lunch. If the results are significant ($p<0.10$) he will switch to Subway for lunch, otherwise he will continue to eat at Jimmy John's.\smallskip
+
+\question If he continues to eat at Jimmy John's even though his long run average lunch expense is above \$10, what kind of error has he made?
+\begin{enumerate}[A]
+	\item Type I, and I am confident.
+    \item Type I, I think.
+    \item Type II, and I am confident.
+    \item Type II, I think.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Section 3.1}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Confidence interval
+    \item Confidence level
+    \item Plausible values for the parameter
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

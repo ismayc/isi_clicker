@@ -1,0 +1,337 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+
+\title{Sections 2.1 and 2.2}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{You don't learn to walk by following rules. You learn by doing, and by falling over.}{Richard Branson}
+\end{frame}
+
+\begin{frame}{Description}
+
+%Print this for students?
+
+Historically, the average claim size for residential home damage from a hurricane is \$25,300. Hurricane Andrew swept through southern Florida causing billions of dollars in home damage. Because of the severity of the storm and the type of residential construction used in this semi-tropical area, there was concern that the average claim size would be greater than the historical average. Several insurance companies collaborated in a data gathering experiment. They randomly selected 45 homes and found that the average claim for the 45 homes was \$26,500 with a standard deviation of \$6635. Is there good evidence that the average claim for home damage from Hurricane Andrew was greater than the historical average?
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units?
+\begin{enumerate}[A]
+   \item Dollar amounts of the claims
+   \item Homes damaged by all hurricanes
+   \item Hurricanes in residential areas
+   \item Insurance claims for home damage due to Andrew%Correct
+   \item Insurance companies that cover home damage
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Variable of Interest}
+\question What is the variable of interest?
+\begin{enumerate}[A]
+   \item The dollar amount of the claims.%Correct
+   \item The average claim size for Hurricane Andrew.
+   \item The proportion of homes damaged by Hurricane Andrew.
+   \item If claims for home damage were greater for Hurricane Andrew.
+   \item Whether or not a home was damaged by Hurricane Andrew.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Parameter or Statistic}
+Historically, the average claim size for residential home damage from a hurricane is \$25,300. Hurricane Andrew swept $\ldots$\smallskip
+
+\question Is the value \$25,300 above a hypothesized parameter value or a statistic?
+\begin{enumerate}[A]
+   \item Hypothesized parameter value%Correct
+   \item Statistic
+   \item Both
+   \item Neither
+   \item I am not sure
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Parameter or Statistic}
+$\ldots$ Several insurance companies collaborated in a data gathering experiment. They randomly selected 45 homes and found that the average claim for the 45 homes was \$26,500 with a standard deviation of \$6635. \smallskip
+
+\question Is the value \$26,500 above a parameter or a statistic? What symbol do we use for numbers like this?
+\begin{enumerate}[A]
+   \item Parameter, $\mu$
+   \item Parameter, $\overline{x}$
+   \item Statistic, $\hat{p}$
+   \item Statistic, $t$
+   \item Statistic, $\overline{x}$%Correct
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Hypotheses}
+Historically, the average claim size for residential home damage from a hurricane is \$25,300. Hurricane Andrew swept through $\ldots$  the average claim for the 45 homes was \$26,500 with a standard deviation of \$6635. Is there good evidence that the average claim for home damage from Hurricane Andrew was greater than the historical average?\smallskip
+
+\question What is the null hypothesis?
+\begin{enumerate}[A]
+   \item The long run probability that a home was damaged by Hurricane Andrew is no different than the historical probability.
+   \item $H_0:\pi= $ \$25,300
+   \item $H_0:\mu= $ \$26,500
+   \item The mean claim for home damage from Hurricane Andrew is no different than the historical average.%Correct
+   \item $H_a:\overline{x}> $ \$25,300
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Hypotheses}
+Historically, the average claim size for residential home damage from a hurricane is \$25,300. Hurricane Andrew swept through $\ldots$  the average claim for the 45 homes was \$26,500 with a standard deviation of \$6635. Is there good evidence that the average claim for home damage from Hurricane Andrew was greater than the historical average?\smallskip
+
+\question What is wrong with the following alternative hypothesis?\quad 
+$H_a:\pi \neq $ \$26,500
+\begin{enumerate}[A]
+   \item The parameter is a mean not a proportion.
+   \item The research question suggests a right--tailed, not two--tailed alternative.
+   \item Hypothesized parameter values, not the values of statistics, should appear in the hypotheses.
+   \item All of the above.%Correct
+   \item B and C, but not A.
+\end{enumerate}
+\end{frame}
+
+% \begin{frame}{Test Statistic}
+% \question The test statistic for the Hurricane Andrew study is
+% $$t=\frac{\overline{x}-\mu_0}{s / \sqrt[]{n}}=
+% \frac{26,500-25,300}{6635 / \sqrt[]{45}}\approx 1.21$$
+% Assuming ``everything'' is the same, how does the evidence from this $t$ test statistic compare to the evidence from the test statistic $z=1.21$?
+% \begin{enumerate}[A]
+%    \item The evidence is exactly the same.
+%    \item The evidence from $t=1.21$ is slightly stronger than the evidence from $z=1.21$.
+%    \item The evidence from $t=1.21$ is slightly weaker than the evidence from $z=1.21$.%Correct
+%    \item There is no way to compare the evidence from the two test statistics.
+% \end{enumerate}
+% \end{frame}
+
+\begin{frame}{$p$--value}
+\question Given the test statistic $t=1.21$ for Hurricane Andrew claims, what sort of $p$--value would you expect for this study?
+
+The $p$--value would be
+\begin{enumerate}[A]
+   \item very small, claims for Andrew were $1.21$ times larger than the historical average.
+   \item very small, Andrew's claims were \$1200 above the historical average.
+   \item small to moderate, $\overline{x}$ is only $1.21$ SEs above the historical average.%Correct
+   \item moderate to large, $t=1.21$ gives little to no evidence against $H_0$.
+  % \item large, we have good evidence against $H_0$.
+   \item large, 26,500-25,300 = 1200 is very small compared to $s=6635$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Description}
+%
+% Print this?
+%
+A zoologist at a large metropolitan zoo is concerned about a potential new disease present among the 243
+sharks living in the large aquarium at the zoo. The zoologist takes a random sample of 15 sharks from the
+aquarium, temporarily removes the sharks from the tank and tests them for the disease. He finds that 3 of
+the sharks have the disease.
+\end{frame}
+
+\begin{frame}{Representative Sample}
+\question Is it reasonable to assume that the sample of 15 sharks is a good representation of all 243 sharks in the aquarium?
+\begin{enumerate}[A]
+   \item No, 15 is too small of a sample for this setting.
+   \item No, the population is not 20 times the sample size.
+   \item No, a larger convenience sample would be more representative.
+   \item Yes, the sample was random.% Correct
+   \item Yes, the population is more than 10 times the sample size.
+\end{enumerate}
+\end{frame}
+
+% \begin{frame}{Validity Conditions}
+% \question If we wanted to test if less than 1/4 of the sharks in the aquarium had the disease, are the validity conditions for a theory-based test met?
+% \begin{enumerate}[A]
+%    \item No, we only have 3 successes.%Correct probably
+%    \item No, our sample could be biased.
+%    \item Yes, the sample was random.
+%    \item Yes, we have a process so everything is fine.
+%    \item Yes, the population size is between 10 and 20 times the sample size.
+% \end{enumerate}
+% \end{frame}
+
+\begin{frame}{Hypotheses}
+\question Recall that the zoologist found $3/15=20\%$ of the sharks in the sample with the disease. If he wanted to test if less than 1/4 of the sharks in the aquarium had the disease, what is his null hypothesis?
+\begin{enumerate}[A]
+   \item $H_0=0.25$
+   \item $H_0:\mu=0.2$
+   \item $H_0:\pi=0.25$ %Correct
+   \item $H_0:\hat{p}<0.25$
+   \item $H_0:\overline{x}=3/15$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{$p$--value}
+\question A simulation based $p$--value for this test is $p=0.48$. Which of the following are correct conclusions based on this $p$--value?
+\begin{enumerate}[A]
+   \item We have good evidence that $\pi=0.25$.
+   \item We do not have good evidence that $\pi<0.25$. 
+   \item $0.25$ is one of many plausible values for $\pi$.
+   %\item All of the above.
+   \item A and B but not C.
+   \item B and C but not A.  %Correct
+\end{enumerate}
+\end{frame}
+   
+
+\begin{frame}{$p$--value}
+\question A simulation based $p$--value for this test is $p=0.48$. Which of the following are correct statements about this $p$--value?
+\begin{enumerate}[A]
+   \item When $\pi=.25$, random samples of size 15 will have $\hat{p}\leq \frac{3}{15}$ about 48\% of the time.% Correct
+   \item The sample must have been biased because $\hat{p}<0.25$, so we should have a small $p$--value.
+   \item The simulation must have been done wrong, the $p$--value should be smaller.
+   \item If we took a larger sample ($n>15$), but still had $\hat{p}=0.2$, the $p$--value would be larger.
+   \item If the population size were doubled (486 sharks in the aquarium), but everything else stayed the same, the $p$--value would decrease.
+  % \item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Shape}
+\question Here is a dot plot for the ages of 21 male rattlesnakes captured at a single site. Assume that these 21
+snakes can be regarded as a random sample of all male rattlesnakes at that site. The average age is 8.571 years,
+with a standard deviation of 2.942 years. Describe the shape of this distribution.
+\begin{multicols}{2}
+\begin{enumerate}[A]
+   \item skewed left
+   \item slightly skewed left%Correct
+   \item fairly symmetric%OK
+   \item slightly skewed right
+   \item skewed right
+\end{enumerate}
+\pic{rattlesnakeweights.PNG}{.55}
+\end{multicols}
+\end{frame}
+
+\begin{frame}{Measures of Center}
+\question Based on the dot plot of rattlesnake ages below, how would you expect the median to compare to the mean?\smallskip
+
+The median would be
+\begin{multicols}{2}
+\begin{enumerate}[A]
+   \item less than the mean%Correct
+   \item roughly equal to the mean%OK
+   \item greater than the mean
+   \item You cannot tell
+\end{enumerate}
+\pic{rattlesnakeweights.PNG}{.55}
+\end{multicols}
+\end{frame}
+
+\begin{frame}{Median}
+\question Based on the dot plot of rattlesnake ages below, estimate the value of the median
+\begin{multicols}{2}
+\begin{enumerate}[A]
+   \item 7
+   \item 8
+   \item 9%Correct
+   \item 11%(21+1) / 2 =11
+   \item You cannot tell
+\end{enumerate}
+\pic{rattlesnakeweights.PNG}{.55}
+\end{multicols}
+\end{frame}
+
+\begin{frame}{Standard Deviation}
+\question If the ages of the three youngest rattlesnakes were all changed to 0, what would happen to the SD?
+%\begin{multicols}{2}
+\pic{rattlesnakeweights.PNG}{.65}
+\begin{enumerate}[A]
+   \item It would get smaller
+   \item It would not change
+   \item It would get larger%Correct
+   \item You cannot tell
+\end{enumerate}
+
+%\end{multicols}
+\end{frame}
+
+\begin{frame}{Mean}
+\question If the ages of the three youngest rattlesnakes were all changed to 0, what would happen to the mean?
+%\begin{multicols}{2}
+\pic{rattlesnakeweights.PNG}{.65}
+\begin{enumerate}[A]
+   \item It would get smaller%Correct
+   \item It would not change
+   \item It would get larger
+   \item You cannot tell
+\end{enumerate}
+
+%\end{multicols}
+\end{frame}
+
+\begin{frame}{Median}
+\question If the ages of the three youngest rattlesnakes were all changed to 0, what would happen to the median?
+%\begin{multicols}{2}
+\pic{rattlesnakeweights.PNG}{.65}
+\begin{enumerate}[A]
+   \item It would get smaller
+   \item It would not change%Correct
+   \item It would get larger
+   \item You cannot tell
+\end{enumerate}
+
+%\end{multicols}
+\end{frame}
+
+\begin{frame}{Rarity}
+\question For the 21 rattlesnakes, the mean age was $8.571$ years with $s=2.942$ years. Which of the following calculations do you feel gives the best measure of how rare a $12.5$ year old rattlesnake would be at this location?
+%\begin{multicols}{2}
+\pic{rattlesnakeweights.PNG}{.5}
+\begin{enumerate}[A]
+   \item It is the 3rd oldest rattlesnake.
+   \item It is $12.5-8.571\approx 3.9$ years above average.
+   \item It is approximately $\frac{12.5}{2.942}\approx 4.2$ SEs above zero.
+   \item It's approximate standardized value is $\frac{12.5-8.571}{2.942}\approx 1.34$.%Correct
+\end{enumerate}
+
+%\end{multicols}
+\end{frame}
+
+
+\begin{frame}{Key Terms and Ideas to Understand in Section 2.3}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Significance level
+    \item Type I error (false alarm)
+    \item Type II error (missed opportunity)
+    \item Power of a test
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

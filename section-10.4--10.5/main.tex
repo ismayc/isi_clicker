@@ -1,0 +1,182 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 10.4-10.5}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Retrieval practice--recalling facts or concepts or events from memory--is a more effective learning strategy than review by rereading. Flashcards are a simple example. Retrieval strengthens the memory and interrupts forgetting. A single, simple quiz after reading a text or hearing a lecture produces better learning and remembering than rereading the text or reviewing lecture notes.}{Peter C.\ Brown, {\it Make It Stick}}
+\end{frame}
+
+\begin{frame}{Type of Problem?}
+\question Researchers Oken et al.\ conducted a study where 135 generally
+healthy men and women aged 65-85 years were randomly assigned to either 6 months of Hatha yoga class (44 people), walking exercise (47 people), or wait-list control (44 people). One of the outcomes of interest was change in ``chair sit and reach” - a measure of how far the subject can reach out while sitting on a
+chair, without losing balance.  Does an association exist between the reach measurement and the exercise assignment?
+
+\begin{click}
+   \item Multiple means %Correct
+   \item Multiple proportions
+   \item Correlation/regression
+   \item None of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Type of Problem?}
+\question In an article published in the Lancet (2001), researchers shared their findings from a study where they followed 6272 Swedish men for 30 years to see whether there was an association between the amount of fish in the diet and likelihood of prostate cancer.  The amount of fish was grouped into categories of large, moderate, small, and none.  It was noted whether the men obtained prostate cancer or not.
+
+\begin{click}
+   \item Multiple means
+   \item Multiple proportions %Correct
+   \item Correlation/regression
+   \item None of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Type of Problem?}
+\question Is hand span a good predictor of how much candy you can grab? Using 45 college students as subjects, researchers set out to explore whether a positive association exists between hand span (cm) and the number of tootsie rolls each subject could grab.
+
+\begin{click}
+   \item Multiple means
+   \item Multiple proportions 
+   \item Correlation/regression %Correct
+   \item None of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units in the previous problem?
+
+\begin{click}
+	\item Hand span of college students
+    \item Tootsie rolls
+    \item American subjects
+    \item The relationship between hand span and rolls grabbed
+    \item None of the above %Correct, college students
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Null Hypothesis}
+\question Identify the appropriate null hypothesis.
+
+\begin{click}
+	\item $H_0: b = 0$
+    \item $H_0: r = 0$
+    \item A linear relationship does not exist between hand span and tootsie rolls. %Correct
+    \item At least two of the above are correct.
+    \item None of the above.
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Alternative Hypothesis}
+\question Identify the appropriate (and most correct) alternative hypothesis.
+
+\begin{click}
+	\item $H_0: \beta \ne 0$
+    \item $H_0: \rho \ne 0$
+    \item A linear relationship exists between hand span and tootsie rolls. %Correct
+    \item At least two of the above are correct.
+    \item None of the above. %Correct \beta (or \rho) > 0
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Using the applet}
+\question The data can be found in the {\bf HandSpan} file on the textbook website.  Use this data and the appropriate applet to identify the correct values of the correlation coefficient and the $y$-intercept of the regression.
+
+\begin{click}
+	\item correlation = $32.9\%$, intercept = $1.17$
+    \item $\rho = 0.574$, $\alpha = -7.25$
+    \item $r = 0.574$, $a = 1.17$
+    \item None of the above. %Correct, $r = 0.574$, $a = -7.25$
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Using the applet}
+\question Use the applet to conduct a simulation assuming the null hypothesis is true with {\bf 10,000} simulations.  Determine the most appropriate approximate $p$-value corresponding to the appropriate statistic.
+
+\begin{click}
+	\item 0 %Correct
+    \item 1
+    \item 0.14 %Used b with correlation selected
+    \item 0.057 %Used r with slope selected
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Two-tailed}
+\question Suppose that the researchers were interested in testing whether the slope of the regression fit was significant.  Without doing any calculations, what would the corresponding $p$-value be for this test?
+
+\begin{click}
+	\item 0 %Correct (2 times 0 is 0.)
+    \item 0.05
+    \item 0.10
+    \item Unable to tell without using the applet
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Two-tailed}
+\question What conclusions can be made based on the value of the previous $p$-value corresponding to the two-tailed test?
+
+\begin{click}
+	\item A large handspan causes one to grab more candy.
+    \item Since the subjects were not randomly selected, we can only make conclusions about the sample selected.
+    \item Subjects with smaller hands tend to grab less candy, on average.
+    \item Two of the above are true. %Correct (B & C)
+    \item None of the above
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Confidence Interval for Correlation}
+\question Use the applet and the 2SD method to find a 95\% confidence interval for the population regression slope for this problem.  Select the closest interval below based on your simulations.
+
+\begin{click}
+	\item $1.17 \pm (2 \times 0.307)$ %Correct (0.556, 1.784)
+    \item $0 \pm (2 \times 0.307)$
+    \item $(0.24, 0.854)$
+    \item $0.574 \pm (2 \times 0.151)$
+    \item None of the above
+\end{click}
+\end{frame}
+
+\end{document}

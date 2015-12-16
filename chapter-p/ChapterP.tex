@@ -1,0 +1,283 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+ %\useoutertheme{mathRiponlogo}
+
+%\setbeamertemplate{itemize/enumerate body begin}{\large}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\large}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\title[Chapter P]{Chapter P}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%\section{Chapter P}
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Tell me and I forget.\\ Teach me and I remember.\\ Involve me and I learn.}{Benjamin Franklin}
+\end{frame}
+
+\begin{frame}{Six Steps of a Statistical Investigation}
+
+\question Put the following steps in the correct chronological order.
+
+\begin{multicols}{2}
+\begin{enumerate}
+	\item[1] Explore the data.
+    \item[2] Formulate conclusions.
+    \item[3] Look back and ahead.
+    \item[4] Ask a research question.
+    \item[5] Design a study and collect data.
+    \item[6] Draw inferences beyond the data.
+\end{enumerate}
+\end{multicols}
+
+\begin{enumerate}[A]
+	\item $1 \rightarrow 5 \rightarrow 4 \rightarrow 3 \rightarrow  2 \rightarrow 6$
+    \item $1 \rightarrow 4 \rightarrow 5 \rightarrow 6 \rightarrow 2 \rightarrow 3$ 
+    \item $4 \rightarrow 5 \rightarrow 1 \rightarrow 6 \rightarrow 2 \rightarrow 3$
+    \item $4  \rightarrow 5 \rightarrow 2 \rightarrow 1  \rightarrow 6 \rightarrow 3$
+    \item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+%----------------------------------------
+\begin{frame}
+
+\question Match the following terms with their correct definitions.
+
+\begin{enumerate}
+	\item[1] A recorded characteristic on the elements of data
+    \item[2] An individual entity on which data is recorded
+    \item[3] A pattern of value/category outcomes 
+\end{enumerate}
+
+\begin{enumerate}[A]
+	\item 1 = observational unit, 2 = distribution, 3 = variable
+    \item 1 = distribution, 2 = variable, 3 = observational unit
+    \item 1 = variable, 2 = distribution, 3 = observational unit
+    \item 1 = variable, 2 = observational unit, 3 = data
+    \item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+%----------------------------------------
+\begin{frame}{Observational Unit \& Variable}
+
+\question \textbf{Select the correct pairing of observational unit (OU) with variable in the following statement.}
+
+\vspace{0.1in}
+
+How much did a typical American consumer spend on Christmas presents in 2012?
+
+\begin{enumerate}[A]
+	\item OU = Christmas presents, Variable = Number of people
+    \item OU = dollars spent, Variable = Number of family members
+    \item OU = dollars spent, Variable = Social class
+    \item OU = consumers, Variable = dollars spent on Christmas presents in 2012
+    \item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+
+%----------------------------------------
+\begin{frame}{Observational Unit \& Variable}
+\small{An article in a 2006 issue of the Journal of Behavioral Decision Making reports on a study involving 47 undergraduate students at Harvard. All of the participants were given \$50, but some (chosen at random) were told that this was a “tuition rebate,” while the others were told that this was ``bonus income.” After one week, the students were contacted again and asked how much of the \$50 they had spent and how much they had saved. Researchers wanted to know whether those receiving the “rebate” would tend to save more money than those receiving the ``bonus".}\\
+
+\question \textbf{Select the correct pairing:}
+
+\begin{enumerate}[A]
+	\item OU = students, Number of variables = 1
+    \item OU = dollars spent, Variable = students
+    \item OU = dollars spent, Variable = Rebate/Bonus
+    \item OU = students, Only variable = dollars spent
+    \item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+%----------------------------------------
+\begin{frame}{Observational Unit \& Variable}
+
+Do college students who pull all-nighters tend to have lower grade point averages than those who do not pull all-nighters?
+
+\vspace*{0.1in}
+
+\question \textbf{Select the correct pairing:}
+
+\begin{enumerate}[A]
+	\item OU = GPA, Only variable = College students
+    \item OU = college students, Variables = one quantitative, one categorical
+    \item OU = amount of sleep, Only variable = GPA
+    \item OU = students who pull all-nighters vs students who don't, Only variable = receiving low GPA
+    \item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+%----------------------------------------
+\begin{frame}%
+
+\frametitle{Problem Statement}%
+
+
+Statistical evidence played an important role in the murder trial involving
+Kristen Gilbert, a nurse who was accused of murdering hospital patients by
+giving them fatal doses of heart stimulant. The following table summarizes
+eighteen months of data collected from the hospital where she worked. The data
+recorded included whether Gilbert was working during an eight-hour shift and
+whether a death occurred on the shift:%
+\[%
+\begin{tabular}
+[c]{c|c|c||c|}\cline{2-4}
+& Gilbert On Shift & Gilbert Not On & \textbf{Total}\\\hline
+\multicolumn{1}{|c|}{Death Occurred} & 40 & 34 & 74\\\hline
+\multicolumn{1}{|c|}{No Death Occurred} & 217 & 1350 & 1567\\\hline\hline
+\multicolumn{1}{|c|}{\textbf{Total}} & 257 & 1384 & 1641\\\hline
+\end{tabular}
+\
+\]%
+\end{frame}%
+
+
+%----------------------------------------
+\begin{frame}%
+\frametitle{Observational Units}%
+
+\question What are the observational units?
+
+\begin{enumerate}[A]
+	\item Deaths
+	\item Hospitals
+	\item Nurses
+	\item Patients
+	\item Shifts
+\end{enumerate}
+
+
+\end{frame}%
+
+%----------------------------------------
+\begin{frame}
+\frametitle{Variables}%
+
+\question One of the variables of interest in this study is whether or not
+Kristen Gilbert was working, what is the other variable and is it quantitative
+or categorical?
+
+\begin{enumerate}[A]
+	\item If a death occurred on a shift or not, categorical
+	\item How many deaths occurred, quantitative
+	\item The proportion of shifts with a death, quantitative
+	\item Whether a patient lived or died before leaving the hospital, categorical
+	\item Whether or not more patients died while Gilbert was working, categorical
+\end{enumerate}
+
+\end{frame}%
+
+%----------------------------------------
+\begin{frame}%
+\frametitle{Center and Variability}%
+
+Consider three distributions of scores for a class of six students.%
+
+\begin{center}
+\includegraphics[
+natheight=1.175600in,
+natwidth=3.472000in,
+height=1.247in,
+width=3.6264in
+]%
+{quizscores.PNG}%
+\end{center}
+
+\question Without doing any calculations, decide how the means of the three
+quizzes compare.
+
+\begin{enumerate}[A]
+	\item $Mean(A)=Mean(B)=Mean(C)$
+	\item $Mean(B)<Mean(C)<Mean(A)$
+	\item $Mean(B)<Mean(A)=Mean(C)$
+	\item $Mean(B)<Mean(A)<Mean(C)$
+	\item None of the above.
+\end{enumerate}
+
+\end{frame}%
+
+%----------------------------------------
+\begin{frame}%
+
+\frametitle{Center and Variability}%
+
+Consider three distributions of scores for a class of six students.%
+
+
+\begin{center}
+\includegraphics[
+natheight=1.175600in,
+natwidth=3.472000in,
+height=1.247in,
+width=3.6264in
+]%
+{quizscores.PNG}%
+\end{center}
+
+
+\question Without doing any calculations, decide how the standard deviations
+(SD) of the three quizzes compare.
+
+\begin{enumerate}[A]
+	\item $SD(A)<SD(B)<SD(C)$
+	\item $SD(A)<SD(C)<SD(B)$
+	\item $SD(B)<SD(C)<SD(A)$
+	\item They are all about the same
+	\item None of the above.
+\end{enumerate}
+
+\end{frame}
+
+
+%--------------------------------------
+\begin{frame}{Key Terms to Understand in Section 1.1}
+\begin{multicols}{2}
+\begin{itemize}
+	\item Statistical significance
+	\item Sample and statistic
+    \item Parameter
+    \item Chance model
+    \item Six Steps of the Statistical Investigation 
+    \item 3S Strategy for Measuring Strength of Evidence
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+\end{document}

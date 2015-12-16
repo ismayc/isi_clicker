@@ -1,0 +1,200 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+\newcommand{\blank}[2]{\underline{\invisible<#2>{{\color{red} {#1}}}}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Chapter 6}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{We learn by pushing ourselves and finding what really lies at the outer reaches of our abilities.}{Josh Waitzkin}
+\end{frame}
+
+
+\begin{frame}{Too Much Coffee?}
+%From Lock book
+In one experiment, 14 researchers trained a random sample of male US liberal arts
+college students to tap their fingers at a rapid rate. The sample was then divided
+at random into two groups of 10 students each. Each student drank the
+equivalent of about two cups of coffee, which included about 200 mg of caffeine
+for the students in one group but was decaffeinated coffee for the second group.
+After a 2-hour period, each student was tested to measure finger tapping rate
+(taps per minute). The students did not know whether or not their drinks
+included caffeine and the person measuring the tap rates was also unaware of
+the groups. The goal of the experiment was to determine whether caffeine produces an increase in the average tap rate.
+\end{frame}
+
+\begin{frame}{Response Variable}
+\question What is the response variable for this problem?
+\begin{click}
+   \item Whether or not caffeine was included
+   \item Whether or not there was a high tap rate
+   \item Number of cups of coffee
+   \item Number of students in each group
+   \item None of the above %Correct (Tap rate)
+\end{click}
+\end{frame}
+
+\begin{frame}{Explanatory Variable}
+\question What is the explanatory variable?
+\begin{click}
+   \item Type of coffee given %Correct
+   \item Number of hours after drinking coffee
+   \item Whether or not caffeine impacts tap rate
+   \item Increases in the average tap rate
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}
+\question What is the population in this problem?
+\begin{click}
+	\item All students at colleges in the US
+    \item Students at liberal arts colleges in the US
+    \item All Americans
+    \item All coffee drinkers
+    \item None of the above %Correct (All male US liberal arts college students)
+\end{click}
+\end{frame}
+
+\begin{frame}{Random Sampling}
+\question Why was random sampling used to select the observational units?
+\begin{click}
+   \item Random sampling ensures that causation can be implied.
+   \item Random sampling lets us make inferences to all male US liberal arts college students.
+   \item Random sampling lets us make strong conclusions about only the samples selected.
+   \item Random sampling ensures that all members of the population are equally likely to be selected in the samples.
+   \item Two of the above are correct. %Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Experiment vs Observational Study}
+\question What type of study was this?
+\begin{click}
+   \item Experiment: the sample was randomly selected.
+   \item Observational study: the researchers only observed the tap rate.
+   \item Experiment: the observational units were randomly assigned to a tap rate.
+   \item Observational study: the explanatory variable was assigned to the participants at random.
+   \item None of the above. %Correct (Experiment - reason d)
+\end{click}
+\end{frame}
+
+\begin{frame}{Alternative Hypothesis}
+Denote $\mu_c$ as the mean tap rate for the population of male students with caffeine and $\mu_n$ as the similar rate without caffeine.
+
+\question Identify the correct alternative hypothesis.
+\begin{click}
+	\item $\mu_c - \mu_n = 0$ 
+	\item $\mu_n < \mu_c$ %Correct (Need to tell them they could switch these as long as they are consistent)
+    \item The mean tap rates are the same with or without caffeine.
+	\item $\mu_c - \mu_n \ne 0$
+    \item None of the above
+\end{click} 
+
+\end{frame}
+
+\begin{frame}{What's Your Conclusion?}
+\begin{columns}[c] 
+    \column{.45\textwidth} 
+\question For this problem, we have an observed difference in sample means of $\bar{x}_c - \bar{x}_n$ of 3.5.  Based on the picture, is there evidence that caffeine increases tap rate?
+
+\begin{click}
+	\item Yes, the $p$-value is large.
+	\item No, the $p$-value is small.
+	\item No, the $p$-value is large. 
+	\item Yes, the $p$-value is small. %Correct
+\end{click}
+
+\column{0.55\textwidth}
+\pic{tapRate.png}{0.6}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Corresponding Confidence Interval}
+\question Suppose that the goal of the experiment was to determine whether caffeine produces an EFFECT in the average tap rate.  What could we say about the corresponding confidence interval based on the size of the $p$-value on the last slide?
+\begin{enumerate}[A]
+	\item It will be entirely positive.
+	\item It will include 0. 
+	\item It will include 3.5.
+    \item Two of the above are true. %Correct (A and C)
+    \item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Extra Questions Based on HW}
+\question If your sample does not meet the validity conditions, what are your options?
+
+\begin{click}
+	\item You should not use simulation-based methods and instead use theory-based methods.
+    \item You can use either simulation-based or theory-based methods since validity conditions have to do with how the sample was collected.
+    \item You will need to collect a different sample and start the entire process over again.
+    \item Two of the above are true.
+    \item None of the above. %Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Extra Questions Based on HW}
+\question What does a $p$-value correspond to in this chapter?
+
+\begin{click}
+	\item The proportion of sample averages as extreme or more extreme than what we observed in our sample out of the total number of simulated sample averages.
+    \item The probability of obtaining a sample proportion of successes as extreme or more extreme than what we observed, assuming the null hypothesis is true.
+    \item The number of simulated differences in sample averages as extreme or more extreme than what we observed in our original sample divided by the total number of simulated differences. %Correct
+    \item Two of the above are true.
+    \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 6 }
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Five-number summary
+    \item Boxplots
+	\item Standard deviation of the sample
+	\item $p$-value
+    \item Observational/experimental unit
+    \item Explanatory/response variables
+    \item Generalization
+    \item Cause-and-effect
+    \item 2SD Method for a CI for $\mu_1 - \mu_2$
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+\end{document}

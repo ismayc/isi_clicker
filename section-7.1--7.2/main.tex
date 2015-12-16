@@ -1,0 +1,207 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 7.1-7.2}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{To know what you know and what you do not know, that is true knowledge.}{Confucius}
+\end{frame}
+
+\begin{frame}{Which Analysis?}
+In an attempt to decide which grocery store has lower prices on average, a random sample of 30 items available at each store (Lucky's and Vons) is selected and prices of these items at both stores are compared.\newline
+
+\question Which type of analysis is appropriate for this situation?
+\begin{click}
+   \item One proportion
+   \item Two proportions
+   \item One mean
+   \item Two independent means
+   \item Matched pairs% Correct
+   %\item none of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Which Analysis?}
+In an attempt to decide which grocery store has lower prices on average, each week for a 40 week period a coin is flipped. If it lands heads, all grocery shopping is done at Lucky's that week. If the coin lands tails, all grocery shopping is done at Vons that week. The weekly costs for each store are compared.\newline
+
+\question Which type of analysis is appropriate for this situation?
+\begin{click}
+   \item One proportion
+   \item Two proportions
+   \item One mean
+   \item Two independent means% Correct
+   \item Matched pairs
+  % \item none of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Which Analysis?}
+You plan to fly from Milwaukee to Orlando and have a choice of two flights. You are able to find how many minutes late each flight left for a random sample of 30 days, over the past several years. (You have data for both flights on each of these 30 days.) You want to decide if one of the flights has a longer average delay.\newline
+
+\question Which type of analysis is appropriate for this situation?
+\begin{click}
+   \item One proportion
+   \item Two proportions
+   \item One mean
+   \item Two independent means
+   \item Matched pairs% Correct
+  % \item none of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Which Analysis?}
+A random sample of 159 University of California Davis (UCD) students, when asked which type of soda they prefer, Coke or Pepsi, 80 preferred Pepsi and 79 preferred Coke. We are interested in knowing if students at UCD have a preference for one of these sodas over the other.\newline
+
+\question Which type of analysis is appropriate for this situation?
+\begin{click}
+   \item One proportion% Correct
+   \item Two proportions
+   \item One mean
+   \item Two independent means
+   \item Matched pairs
+ %  \item none of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Simulation Set Up}
+Do cars get better mileage with higher octane fuel? A driving course that simulated both city and highway driving conditions was used to collect data related to this question. Eleven drivers (and their own cars) had exactly 10 gallons of gas put in the car's tank, without the driver knowing what type of gas was added, and they were asked to drive until they ran out of gas. The other type of gas was then added and they repeated the driving experiment. The order of the type of gas (87 octane versus 92 octane) was randomized for each driver. The number of miles driven was recorded each time. Summary statistics are given in the table below.
+\begin{center}
+\begin{tabular}{| c | c | c | c|}
+\hline
+& 87 Octane           & 92 Octane  & Diff ($92-87$)\\ \hline \hline
+$\overline{x}$     & $243.7$  & $248.8$   & $5.1$  \\ \hline
+$s$ & $115.16$  & $120.28$   & $14.18$  \\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Sample}
+\question What is the sample for the gas mileage question?
+\begin{click}
+   \item The 22 values for number of miles driven.
+   \item The 11 car-driver pairs.% Correct
+   \item The 11 differences ($92 - 87$) in miles driven.
+   \item All car-driver pairs.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Response Variable}
+\question What is the response variable for the gas mileage question?
+\begin{click}
+   \item The number of miles driven.% Correct
+   \item The difference in number of miles driven.
+   \item The octane level of the gasoline.
+   \item Whether or not 92 octane gasoline is associated with higher mileages.
+  % \item How many cars went farther with 92 octane gasoline.
+  \item The mean number of miles driven.
+\end{click}
+\end{frame}
+
+\begin{frame}{Hypotheses}
+\question What is the null hypothesis for the gas mileage question?
+\begin{click}
+   %\item It makes no difference which octane level was used first.
+   \item $H_0: \mu_{92} - \mu_{87} =0$.
+   \item $H_0: \pi_{92} = 0.5$.
+   \item $H_0: \overline{x}_{d} = 0$.
+   \item Two of the above are correct.
+   \item None of the above.% Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{$p$-value}
+\question A simulation of 200 values of the study statistic, $\overline{x}_{d}$, assuming $\mu_{d} = 0$, is shown below. The study statistic was $\overline{x}_{d} = 5.1$. Which of the following could be the estimated $p$--value for the alternative $\mu_d > 0$?
+
+\smallskip
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.25\textwidth}
+   \begin{click}
+      \item $p \approx 0$
+      \item $p \approx 0.01$
+      \item $p \approx 0.15$% Correct
+      \item $p \approx 0.5$
+      \item $p \approx 1$
+   \end{click}
+\end{column}
+\begin{column}{.75\textwidth}
+      \pic{gasmileagesim.PNG}{0.95}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Test Statistic}
+\question Looking at the simulation and recalling that the study had $\overline{x}_{d} = 5.1$, Which of the following could be the estimated test statistic ($t =$ the standardized value of $\overline{x}_{d}$)?
+
+\smallskip
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.25\textwidth}
+   \begin{click}
+      \item $t=-2$
+      \item $t=-1$
+      \item $t=0$
+      \item $t=1$% Correct
+      \item $t=2$
+   \end{click}
+\end{column}
+\begin{column}{.75\textwidth}
+      \pic{gasmileagesim.PNG}{.95}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 7}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item $\mu_d$
+    \item ${x}_d$
+    \item Independent samples
+    \item Paired samples
+    \item $SE$
+    \item $2SD$ method for CI for $\mu_d$
+    \item Validity conditions for paired $t$-test
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

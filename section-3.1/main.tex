@@ -1,0 +1,180 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+
+\title{Section 3.1}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Learning is not child's play; we cannot learn without pain.}{Aristotle}
+\end{frame}
+
+\begin{frame}{Where's the $p$-value?}
+Let $\pi$ denote some population proportion of interest and suppose a 99\% confidence interval for $\pi$ is calculated to be \\ (0.5, 0.8). Also, suppose that we want to test $H_0: \pi = 0.79$ vs. $H_a: \pi \ne 0.79$. 
+
+\smallskip
+
+\question What can you say for sure about the corresponding $p$-value?
+
+\begin{enumerate}[A]
+	\item The corresponding $p$-value will be greater than 5\%.
+    \item The corresponding $p$-value will be equal to 1\%.
+    \item The corresponding $p$-value will greater than 1\%. %correct
+	\item The corresponding $p$-value will less than 1\%.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{What's the confidence interval?}
+Suppose we are constructing a confidence interval using repeated tests of significance. Using two-sided tests each time with the following null hypotheses, we obtain these $p$-values.
+
+\pic{table.PNG}{1.1}
+
+\question Give an approximate 90\% CI in the form $(lower, upper)$.
+
+\begin{multicols}{2}
+\begin{enumerate}[A]
+	\item $(0.47, 0.58)$
+    \item $(0.47, 0.57)$ %correct
+    \item $(0.48, 0.56)$
+    \item $(0.46, 0.57)$
+\end{enumerate}
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Plausible values}
+Let $\pi$ denote some population proportion of interest and suppose a 95\% confidence interval for $\pi$ is calculated to be (0.25, 0.55).
+
+\question Give one plausible value for $\pi$.
+
+\begin{enumerate}[A]
+	\item 0.20
+    \item 0.56
+    \item 0.13
+    \item 0.95
+    \item None of the above. %correct
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Different hypothesized values}
+Let $\pi$ denote some population proportion of interest and suppose a 95\% confidence interval for $\pi$ is calculated to be (0.25, 0.55).
+
+\question Make a guess for what the two-sided $p$-value would be if you hypothesized that $\pi = 0.58$.
+
+\begin{enumerate}[A]
+	\item 0.99
+    \item 0.01 %correct
+    \item 0.25
+    \item 0.50
+    \item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Guessing $p$-values}
+A representative sample to estimate some population proportion $\pi$ produces the sample proportion $\hat{p}=0.54$. A test of $H_0:\pi=0.51$ against the alternative $\pi\neq 0.51$ gives a $p$--value of $p=0.16$.\smallskip
+
+\question What can you say about the $p$--value one would obtain for the null hypothesis $H_0:\pi=0.52$?
+\begin{enumerate}[A]
+   \item It would be smaller than $p=0.16$ because $\hat{p}=0.54$ is closer to $\pi_0=0.52$ than it is to $\pi_0=0.51$.
+   \item It would be larger than $p=0.16$ because $\hat{p}=0.54$ is closer to $\pi_0=0.52$ than it is to $\pi_0=0.51$. %correct
+   \item It would be the same because $\hat{p}$ has remained the same.
+   \item You would have to run the test or a simulation to decide.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Confidence Intervals and $p$--values}
+A representative sample to estimate some population proportion $\pi$ produces the sample proportion $\hat{p}=0.54$. A test of $H_0:\pi=0.51$ against the alternative $\pi\neq 0.51$ gives a $p$--value of $p=0.16$.\smallskip
+
+\question What can you say about the $p$--value one would obtain for the null hypothesis $H_0:\pi=0.57$?
+\begin{enumerate}[A]
+   \item It would be smaller than $p=0.16$ because $\hat{p}=0.54$ is less than $\pi_0=0.57$.
+   \item It would be larger than $p=0.16$ because the $z$--score for $0.57$ is positive.
+   \item It would be similar to $p=0.16$ because $0.57$ is the same distance from $0.54$ as $0.51$ is. %Correct
+   \item You would have to run the test or a simulation to decide.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Confidence Intervals and $p$--values}
+A representative sample to estimate some population proportion $\pi$ produces the sample proportion $\hat{p}=0.54$. A test of $H_0:\pi=0.51$ against the alternative $\pi\neq 0.51$ gives a $p$--value of $p=0.16$.\smallskip
+
+\question Assuming a two--tailed alternative, which of the following null hypotheses do you think will give a $p$--value smaller than $p=0.16$?
+\begin{enumerate}[A]
+   \item $H_0:\pi=0.64$.
+   \item $H_0:\pi=0.53$
+   \item $H_0:\pi=0.47$.
+   \item B and C but not A.
+   \item A and C but not B. %correct
+   %\item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Comparing Confidence Intervals}
+Teenage hearing loss has increased significantly in America over the past several years. A 95\% CI using the interval of plausible values method is given by $(0.16,0.23)$.\smallskip
+
+%
+%I used 78 / 400 to create the original and rounded
+%
+
+\question Which of the following could be the 99\% CI based on the same sample?
+\begin{enumerate}[A]
+   \item $(0.13,0.22)$%No, misses some values in 95% CI
+   \item $(0.18,0.21)$%No, this interval is narrower
+   \item $(0.14,0.25)$%Yes
+   \item $(0.16,0.27)$%No, wrong center or 0.129 has p value about .05, not .01
+   %\item All of the above.
+   \item None of the above.
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{Key Terms and Ideas to Understand in Section 3.2 and 3.3}
+\begin{multicols}{2}
+\begin{itemize}
+	\item Confidence level
+    \item Margin-of-error
+    \item Center of CI
+    \item Multiplier
+    \item Standard error of $\hat{p}$
+    \item Standard error of $\overline{x}$
+    \item 2 SD Method for CIs
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}

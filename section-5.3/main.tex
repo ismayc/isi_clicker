@@ -1,0 +1,242 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+\newcommand{\blank}[2]{\underline{\invisible<#2>{{\color{red} {#1}}}}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Section 5.3}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{There is no secret to success, but it's the result of hard work, good preparation and learning from failure.}{Ally Mbululo}
+\end{frame}
+
+\begin{frame}{Conserving Hotel Towels?}
+Many hotels have begun a
+conservation program that encourages guests to re-use towels rather than
+have them washed on a daily basis. A recent study examined whether one
+method of encouragement might work better than another. Different signs
+explaining the conservation program were placed in the bathrooms of the
+hotel rooms, with random assignment determining which rooms received which
+sign. One sign mentioned the importance of environmental protection, whereas
+another sign claimed that 75\% of the hotel's guests choose to participate
+in the program. The researchers suspected that the latter sign, by appealing
+to a social norm, would produce a higher proportion of hotel guests who
+agree to re-use their towels. Researchers used the hotel staff (a mid--sized,
+mid--priced hotel in the Southwest that was part of a well-known national
+hotel chain) to record whether guests staying for multiple nights agreed to
+reuse their towel after the first night.
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units?
+\begin{click}
+   \item Guests at hotels
+   \item Mid--sized mid--priced hotels
+   \item Multi-night guests at hotels%Correct
+   \item The two signs
+   \item Towels
+   %\item 
+\end{click}
+\end{frame}
+
+\begin{frame}{Explanatory Variable}
+\question What is the explanatory variable?
+\begin{click}
+   \item If a guest stayed multiple nights.
+   \item Which sign (social norm or environmental) was displayed.%Correct
+   \item If the social norm sign produced more towel reuse than the environmental sign.
+   \item Whether or not a guest chose to re--use their towels.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Study Results}
+The study results are summarized in the table below. Assume we abbreviate the social norm sign group using ``sn'' and the environmental sign group using ``e''.
+\[
+\begin{tabular}{|c||c|c|c|}
+\hline
+& Social norm &Environmental & Total \\ \hline\hline
+Re-used Towel & 98 & 74 & 172 \\ \hline
+Did Not Re-use & 124 & 137 & 261 \\ \hline
+Total & 222 & 211 & 433 \\ \hline
+\end{tabular}%
+\]
+We see that
+\begin{itemize}
+   \item  the statistic is \blank{$\hat{p}_{sn} - \hat{p}_e = 0.441 - 0.351 = 0.09$;}{1} \pause
+   \item the overall or combined proportion is $\dfrac{172}{433} \approx 0.397$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Significance}
+\question Would you guess that the difference in conditional proportions, $\hat{p}_{sn} - \hat{p}_e \approx 0.09$ is statistically significant?
+\begin{click}
+%
+% No correct answer here, just an opinion
+%
+   \item No, $p=0.09$ does not give strong evidence against the null hypothesis.
+   \item No, a 9\% difference is small compared to 50\%.
+   \item No, but not for either reason above.
+   \item Yes, the sample sizes are fairly large and the difference is relatively big.
+   \item Yes, but not for the reason above.
+   %\item I am not sure.
+\end{click}
+\end{frame}
+
+\begin{frame}{Null Hypothesis}
+\question What is the most appropriate null hypothesis?
+\begin{click}
+   %\item $H_0: \pi =0.5$
+   \item $H_0: \pi = 0.397$
+   \item $H_0: \hat{p}_{sn} - \hat{p}_e = 0$
+   \item The social norm sign has a 50--50 chance of having a guest re--use their towel.
+   \item The social norm sign increases the probability of towel re--use.
+   \item None of the above.%Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Parameter}
+\question The correct alternative hypothesis could be stated as $H_a: \pi_{sn} - \pi_e > 0$. Which is the best description of the parameter $\pi_{sn}$?
+\begin{click}
+   \item The long run probability that a guest with the social norm sign opts to re--use their towels.%Correct
+   \item $\pi_{sn} = \frac{98}{222} \approx 0.441$.
+   \item The population increase in the proportion of guests opting to re--use their towels with the social norm sign, as opposed to the environmental sign.
+   \item The population proportion of guests who opt to re--use their towels.
+   \item The probability that the social norm sign will increase the proportion of guests who opt to re--use their towels (over the environmental sign).
+\end{click}
+\end{frame}
+
+\begin{frame}{Simulation}
+\begin{columns}[onlytextwidth]
+\begin{column}{.45\textwidth}
+The image shows 500 simulated differences ($\hat{p}_{sn} - \hat{p}_e$) assuming no association between the signs and guests opting for towel re--use. The study produced $\hat{p}_{sn} - \hat{p}_e \approx 0.09$.
+\end{column}
+\begin{column}{.65\textwidth}
+\pic{towelsimapplet.PNG}{0.93}
+\end{column}
+\end{columns}
+\question What is the size of the $p$--value? %against the alternative $H_a: \pi_{sn} - \pi_e > 0$?
+\begin{click}
+   \item It will be small, 0.09 is one SD away.
+   \item It will be small, 0.09 is in the tail of the null distribution. %Correct
+   \item It will not be small, the null distribution is centered near 0.
+   \item It will not be small, 0.09 is large compared to zero.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Standardized Statistic}
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.45\textwidth}
+\question What is true of the $z$ statistic in this context?
+
+\begin{click}
+	\item It is $\dfrac{-0.001 - 0.09}{0.045}$.
+    \item It is $\dfrac{0.09 - (-0.001)}{0.045/\sqrt{433}}$.
+    \item It measures the distance the statistic is from 0.5.
+    \item Two of the above are true.
+    \item None of the above. %Correct
+\end{click}
+\end{column}
+
+\begin{column}{.65\textwidth}
+\pic{towelsimapplet.PNG}{0.93}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{2SD Confidence Interval for $\pi_{sn} - \pi_{e}$}
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.5\textwidth}
+\question What is true of the 2SD confidence interval for the parameter of interest?
+
+\begin{click}
+	\item It is not centered at 0. %Correct
+    \item It has a width of 0.09.
+    \item We have strong evidence that the proportion of guests that re-used towels that were exposed to the social norm sign is larger than the proportion of those exposed to the environmental sign.
+    \item All of the above are true.
+    \item Exactly two of A-C are true. 
+\end{click}
+\end{column}
+
+\begin{column}{.65\textwidth}
+\pic{towelsimapplet.PNG}{0.93}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Theory-Based Validity Conditions}
+\question Are the validity conditions met in this example to trust theory-based approaches?
+
+\begin{click}
+	\item Yes, $\hat{p}_{sn}$ and $\hat{p}_e$ are far apart.
+    \item Yes, $n_{sn}$ and $n_{e}$ are both larger than 20.
+    \item No, $\hat{p}_{sn}$ and $\hat{p}_e$ do not equal 0.5.
+    \item No, the response was not randomly assigned to the two levels of the explanatory variable.
+    \item None of the above. %Correct, all of the counts in the table are at least 10.
+\end{click}
+
+\end{frame}
+
+\begin{frame}{Theory-Based $p$-value}
+\question Assuming that the validity conditions have been met, use the Theory-Based Inference applet to determine the $p$-value corresponding to the problem statement. 
+
+\begin{click}
+	\item 0.0269 %Correct
+    \item 0.091
+    \item 0.501
+    \item 0.9731
+    \item None of the above.
+\end{click}
+
+\end{frame}
+
+
+%\begin{frame}{Key Terms and Ideas to Understand in Section }
+%\begin{multicols}{2}
+%\begin{itemize}
+%	\item 
+%\end{itemize}
+%\end{multicols}
+%\end{frame}
+
+\end{document}

@@ -1,0 +1,241 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 3.4-3.5 and Chapter 4}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{In Eastern cultures, it's just assumed that struggle is a predictable part of the learning process. Everyone is expected to struggle in the process of learning, and so struggling becomes a chance to show that you, the student, have what it takes emotionally to resolve the problem by persisting through that struggle.}{Alix Stigler, \href{http://www.npr.org/blogs/health/2012/11/12/164793058/struggle-for-smarts-how-eastern-and-western-cultures-tackle-learning}{NPR}}
+\end{frame}
+
+\begin{frame}{Comparing Two CI Recipes}
+Consider the following two descriptions for creating a CI for a population proportion $\pi$. You should assume that all validity conditions are met and all samples are properly obtained.
+\begin{enumerate}
+   \item A theory based 95\% CI based on a sample of size $n = 200$.
+   \item A theory based 90\% CI based on a sample of size $n=500$.
+\end{enumerate}
+
+\question In the long run, which type of CI will succeed in capturing the true value of $\pi$ a larger proportion of the time?
+
+\begin{enumerate}[A]
+   \item Method 1 since it has a higher confidence level.% Correct
+   \item Method 2 since it is based on a larger sample.
+   \item Both methods will capture $\pi$ with about equal probability.
+   \item You cannot tell.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{CI Properties}
+Representative data collected by child development scientists produced the following 90\% CI for the average age (in months) at which children say their first word:
+$$10.4 < \mu < 13.8.$$
+
+\question Which of the following are valid interpretations or true statements about this CI?
+
+\begin{enumerate}[A]
+   \item The sample used had $\overline{x} = 12.1$ months.% Correct
+   \item About 90\% of the children in the sample spoke their first word at an age between 10.4 and 13.8 months.
+   \item A two sided test of $H_0: \mu = 11$ months would yield $p<0.1$.
+   \item All of the above.
+   \item A and B but not C.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{CI Properties}
+A random sample of college students was used to estimate the proportion of all college students that own a car. A 99\% CI based on this sample is:
+$$(0.316,0.462).$$
+
+\question Which of the following are valid interpretations or true statements about this CI?
+
+\begin{enumerate}[A]
+   \item A 95\% CI based on the same sample would be wider.
+   \item A smaller sample (with the same value of $\hat{p}$) would have produced a wider CI. % Correct
+   \item Doubling the sample size (everything else stays the same) would have cut the margin of error in half.
+   %\item We have good evidence that less than half of all college students own a car.
+   %\item All but one of the above.
+   \item A and B.
+   \item B and C.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{CI Properties}
+On January 29, 2011, visitors to the CNN.com website were invited to answer a poll question. The results are shown below and a 99.9\% confidence interval for the population proportion (of “yes” responses) turns out to be 
+$(0.4846,0.495).$
+ 
+ \begin{multicols}{2}
+\question What is the best explanation of why this interval is so narrow?
+
+ \begin{center}
+ \pic{cnnpoll.PNG}{.6}
+ \end{center}
+\end{multicols}
+
+\begin{enumerate}[A]
+   \item The sample size is very large.% Correct
+   \item $\hat{p}$ is very close to $1/2$.
+   \item It was a voluntary response sample.
+   \item CNN.com is a well respected website.
+   \item All of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Statistical and Practical Significance}
+The CNN.com poll gave the 99.9\% CI of
+$(0.4846,0.495).$ The standardized $z$--statistic for testing the null hypothesis that 50\% of American adults claim to be exercising more in 2011 turns out to be $-6.51$, for a $p$--value of $2.5 \times 10^{-10}$. 
+
+
+\begin{multicols}{2}
+\question These results are certainly statistically significant. How would you describe the practical value of these results?
+
+\begin{center}
+   \pic{cnnpoll.PNG}{.6}
+\end{center}
+
+\end{multicols}
+
+\begin{enumerate}[A]
+   \item They have a high practical value since the $p$--value is so low.
+   \item They have a high practical value since the sample size is so large.
+   \item They have little or no practical value because $\hat{p} \approx 0.5$.% Correct
+   \item None of the above.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Non--Random Errors}
+The CNN.com poll gave the 99.9\% CI 
+$(0.4846,0.495).$ 
+
+
+\begin{multicols}{2}
+\question Which of the following would be reasons to take the results of this poll with some caution?
+
+\begin{center}
+   \pic{cnnpoll.PNG}{.6}
+\end{center}
+
+\end{multicols}
+
+\begin{enumerate}[A]
+   \item It is a voluntary response sample.
+   \item People sometimes forget or misrepresent the truth.
+   \item The results may have changed if the order of the answers were reversed.
+   \item People may have let social or peer pressure alter their response.
+   %\item All of the above.% Correct
+   \item All but one of A to D. %Correct
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Observational Units}
+In a study reported in the Archives of Pediatric and Adolescent Medicine on treating warts, researchers investigated whether liquid nitrogen cryotherapy (“freezing it off”) or common duct tape would be a more effective treatment for kids with warts. The researchers randomly assigned the 51 patients to two treatment groups and found that 22 of 26 patients treated with duct tape saw complete disappearance of their warts, compared to 15 of 25 patients in the cryotherapy group.\smallskip
+
+\question What are the observational units?
+
+\begin{click}
+   \item Methods for wart removal.
+   \item Kids with warts. %Correct
+   \item Warts.
+   \item Researchers.
+\end{click}
+\end{frame}
+
+\begin{frame}{Observational Units}
+For the wart study, where researchers randomly assigned the 51 patients to two treatment groups and found that 22 of 26 patients treated with duct tape saw complete disappearance of their warts, compared to 15 of 25 patients in the cryotherapy group.\smallskip
+
+\question What is the explanatory variable?
+
+\begin{click}
+   \item Whether a wart completely disappeared or not.
+   \item The proportion of kids whose warts completely disappeared.
+   \item Which treatment (cryotherapy or duct tape) was used on each subject.%Correct
+   \item Whether or not cryotherapy and duct tape are equally effective in removing warts on kids.
+   \item The percentage of kids whose warts did not disappear.
+\end{click}
+\end{frame}
+
+
+\begin{frame}{Causation}
+In a study on treating warts, researchers investigated whether cryotherapy or common duct tape would be a more effective treatment for kids with warts. The 51 patients were randomly assigned to two treatment groups and found that 22 of 26 patients treated with duct tape saw complete disappearance of their warts, compared to 15 of 25 patients using cryotherapy.\smallskip
+
+\question Assuming the results were statistically significant ($p <0.05$), would it be correct to conclude that duct tape caused more warts to disappear than did cryotherapy?
+
+\begin{click}
+   \item No, there could be a confounding variable.
+   \item No, there is no way that duct tape is better.
+   \item No, cause-and-effect can only be concluded from observational studies.
+   \item Yes, the data clearly show an association between the treatment group and the complete disappearance of warts.
+   \item Yes, this is a randomized experiment.% Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Blindness}
+In a study on treating warts, researchers investigated whether liquid nitrogen cryotherapy (“freezing it off”) or common duct tape would be a more effective treatment for kids with warts. The researchers randomly assigned the 51 patients to two treatment groups and found that 22 of 26 patients treated with duct tape saw complete disappearance of their warts, compared to 15 of 25 patients in the cryotherapy group.\smallskip
+
+\question Was this study double--blind?
+
+\begin{click}
+   \item No, the kids could tell which treatment group they were in.%Correct
+   \item Yes, both cryotherapy and duct tape are blind treatments.
+   \item Yes, the students were randomly assigned to groups so double--blind is implied.
+   \item Yes, the researchers did not know which treatment was being applied.
+   \item There is not enough information given to decide.
+\end{click}
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapters 3 and 4}
+\begin{multicols}{2}
+\begin{itemize}
+    \item Confidence Level
+    \item Confidence Interval
+    \item Center of the confidence interval
+    \item Margin-of-error
+    \item 2SD Method for CIs
+    \item How Sample Size Affects CI Width
+	\item Association
+    \item Cause--and--effect Relationship
+    \item Confounding Variable
+    \item Control Group
+    \item Double--blind
+    \item Experiment and Observational Study
+    \item Explanatory and Response Variables
+    \item Placebo
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}

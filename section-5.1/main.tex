@@ -1,0 +1,194 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Section 5.1}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Critical thinking is thinking about your thinking while you're thinking in order to make your thinking better.}{Richard W. Paul}
+\end{frame}
+
+\begin{frame}{Fair Bills?}
+The U.S. government authorizes private contractors to audit bills paid by Medicare and Medicaid. The contractor audits a random sample of paid claims and judges each claim to be either fully justified or an overpayment. Two SRS's were chosen, 30 small claims and 30 medium claims. We want to answer the question, ``Does the chance that a claim is judged to be an overpayment depend on the size of the claim?”
+%\end{frame}
+
+%\begin{frame}{The $2 \times 2$ Table}
+\[
+\begin{tabular}{|c||c|c|c|}
+\hline
+& Small & Medium & Total \\ \hline\hline
+Overpayment & 14 & 8 & 22 \\ \hline
+Fully Justified & 16 & 22 & 38 \\ \hline
+Total & 30 & 30 & 60 \\ \hline
+\end{tabular}%
+\]
+\end{frame}
+
+\begin{frame}{Explanatory Variable}
+\question What is the explanatory variable?
+\begin{click}
+   \item How a claim was judged (overpayment or fully justified). 
+   \item The size of a claim (small or medium). %Correct
+   \item The proportion of claims that were judged to be overpayments.
+   \item Whether or not a higher proportion of medium claims are judged as overpayments.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Response Variable}
+\question What is the response variable?
+\begin{click}
+   \item How a claim was judged (overpayment or fully justified). %Correct
+   \item The mean number of overpayment claims.
+   \item The proportion of claims that were judged to be overpayments.
+   \item Whether or not a higher proportion of medium claims are judged as overpayments.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}
+\question As for any $2 \times 2$ table, there are two pairs of conditional proportions. For this table, the two pairs are 14/30 versus 8/30 and 16/38 versus 14/22. Which pair corresponds to the question of interest?
+\begin{click}
+   \item 16/38 and 14/22 because this shows the relative risk of a small claim being an overpayment.
+      \item 14/30 versus 8/30, since those are the proportions of successes (overpayments) in each group (small or medium sized claims). %Correct
+   \item Neither, 22/60 is the correct proportion to consider for overpayments.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+
+\begin{frame}{College Pride}
+Think about the proportion of students at your college who are wearing clothing that displays the college name or logo today. Also suppose that a friend of yours attends a different college, and the two of you have a recurring discussion about which college displays more school pride. You decide to measure school pride by the proportion of students at the college who wear clothing that displays the college name or logo on a particular day. You want to investigate whether this proportion differs between your college (call it Exemplary Students University, ESU) and your friend’s college (call it Mediocre Students University, MSU).
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units?  As always, be as specific as possible.
+\begin{click}
+   \item Clothing, with or without college logos.
+   \item The two colleges.
+   \item Students at both schools who wear clothing with college logos.
+   \item Students at both colleges. %Correct
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Response Variable}
+\question What is true of the response variable?
+\begin{click}
+   \item It is not categorical.
+   \item It is which school has more pride.
+   \item It is whether or not a student is wearing clothing that displays the college name or logo. %Correct
+   \item It is how many students are wearing clothing that displays the college name or logo.
+   \item It is which school a student attends (ESU or MSU).
+\end{click}
+\end{frame}
+
+\begin{frame}{Random Sampling}
+\question Would you use random sampling to select the observational units? If so, explain why. 
+\begin{click}
+   \item Random sampling ensures that causation can be implied.
+   \item Random sampling let's us make inferences to all college students.
+   \item Random sampling let's us make strong conclusions about only the samples selected.
+   \item Random sampling ensures that each student at both colleges has an equal chance of being selected.
+   \item Two of the above are correct. %Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Random Assignment}
+\question Would you use random assignment to create the two groups to compare in this study?
+\begin{click}
+   \item Yes, this will ensure the proper ratio of logos for both colleges.
+   \item Yes, random assignment and random sampling are needed to make generalizations to broader populations.
+   \item Yes, random assignment ensures that observational studies are conducted properly.
+   \item Two of the above are correct.
+   \item None of the above. %Correct
+\end{click}
+\end{frame}
+
+\begin{frame}{Conditional Proportions}
+\question Why are conditional proportions used in the types of studies discussed in Chapter 5?
+\begin{click}
+   \item They allow us to compare the percentages of successes in samples of different sizes. %Correct
+   \item They allow us to determine the proportion of successes conditioning on a given level of the response variable.
+   \item They allow us to conclude that one categorical variable causes the other categorical variable to occur regardless of study design.
+   \item Two of the above are correct.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Relative Risk --- modified STUDENT QUESTION}
+\question What is relative risk?
+\begin{click}
+   \item The chance of error that is taken every time you gather a sample
+   \item An indication about how many times greater the risk is of an outcome compared to another %Correct
+   \item $\hat{p}_1 - \hat{p}_2$
+   \item $\pi_1$/$\pi_2$
+   \item None of the above
+\end{click}
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 5}
+\begin{multicols}{2}
+\begin{itemize}
+	\item \textbf{Section 5.1}
+\begin{itemize}
+   \item Observational Unit
+   \item Explanatory Variable
+   \item Response Variable
+   \item Two-way Table
+   \item Conditional Proportions
+\end{itemize}
+	\vspace*{0.2in}
+	\item \textbf{Sections 5.2/5.3}
+\begin{itemize}
+   \item Association/no association
+   \item Random assignment
+   \item $\pi_1 - \pi_2$ (Parameter)
+   \item $\hat{p}_1 - \hat{p}_2$ (Statistic)
+   \item $p$-value
+   \item $2SD$ CI for $\pi_1 - \pi_2$
+   \item Shuffling the response
+\end{itemize}  
+
+\end{itemize}
+\end{multicols}
+\end{frame}
+
+
+\end{document}

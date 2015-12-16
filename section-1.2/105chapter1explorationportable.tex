@@ -1,0 +1,235 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+ %\useoutertheme{mathRiponlogo}
+
+%\setbeamertemplate{itemize/enumerate body begin}{\large}
+%\setbeamertemplate{itemize/enumerate subbody begin}{\large}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+
+\title{Section 1.2}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{For me, I am driven by two main philosophies: know more today about the world than I knew yesterday and lessen the suffering of others. You'd be surprised how far that gets you.}{Neil deGrasse Tyson}
+\end{frame}
+
+\begin{frame}{Center of Null Distribution}
+Suppose you are testing the hypotheses $H_0 : \pi = 0.25$ and $H_a : \pi < 0.25$ and the observed statistic, $\hat{p}$, is equal to 0.30 with a sample size of 100.
+
+\vspace*{0.1in}
+
+\question If you are using a proportion as your statistic, where do you expect your null distribution to be centered?
+\begin{enumerate}[A]
+	\item 0.25
+    \item 0.50
+    \item 0.30
+    \item 30
+    \item None of the above
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Center of Null Distribution (continued)}
+Suppose you are testing the hypotheses $H_0 : \pi = 0.25$ and $H_a : \pi < 0.25$ and the observed statistic, $\hat{p}$, is equal to 0.30 with a sample size of 100.
+
+\vspace*{0.1in}
+
+\question If you are using a count as your statistic, where do you expect your null distribution to be centered?
+\begin{enumerate}[A]
+	\item 25
+    \item 50
+    \item 0.30
+    \item 30
+    \item None of the above
+\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{$P$-value}
+\question Which of the following is the correct definition of ``$p$-value"?
+\begin{enumerate}[A]
+	\item The proportion of successes in our sample
+    \item The probability the null hypothesis is true
+    \item The proportion of times the observed statistic occurs out of the total number of replications in the null distribution
+    \item The chance of obtaining a sample statistic as extreme or more extreme than the observed statistic, assuming the alternative hypothesis is true
+    \item None of the above
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Form of the Null Hypothesis}
+\question Which of the following is the correct general form for the null hypothesis when testing one proportion?
+\begin{enumerate}[A]
+	\item $H_0: \pi = 0.5$
+    \item $H_0: \hat{p} = \text{hypothesized parameter value}$
+    \item $H_0: \pi =  \text{hypothesized parameter value}$
+    \item $H_0: \pi = \hat{p}$
+    \item $H_0: \pi \geq \text{hypothesized parameter value}$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Which Tire? Setup}
+
+A legendary story on college campuses concerns two students who miss
+a chemistry exam because of excessive partying but blame their absence on a
+flat tire. The professor allows them to take a make-up exam, and sends them to
+separate rooms to take it. The first question, worth five points, is quite
+easy. The second question, worth ninety-five points, asks: ``Which tire was
+it?"
+\end{frame}
+
+\begin{frame}{Ask a research question}
+
+Do students pick which tire went flat in equal proportions? It has
+been conjectured that when students are asked this question and forced to give
+an answer (left front, left rear, right front, or right rear) off the top of
+their head, they tend to answer \textquotedblleft right
+front\textquotedblright\ more than would be expected by random chance.
+\end{frame}
+
+\begin{frame}{Design a study and collect data}
+
+To test this conjecture about the right front tire, a recent class
+of 28 students was asked if they were in this situation, which tire would they
+say had gone flat. We obtained the following results:%
+
+\[%
+\begin{tabular}
+[c]{|c|c|c|c|}\hline
+Left front & Left rear & Right front & Right rear\\\hline
+6 & 4 & 14 & 4\\\hline
+\end{tabular}
+\]
+\end{frame}
+
+\begin{frame}{Observational Units}
+\question What are the observational units?
+\begin{enumerate}[A]
+   \item The students.%Correct
+   \item The four tires.
+   \item Whether students select \textit{right front} more than expected.
+   \item Whether or not students select \textit{right front}.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Variable of Interest}
+\question What is the variable of interest in this study?
+\begin{enumerate}[A]
+   \item The long run probability that a student picks the right front tire. 
+   \item The proportion of students who picked the right front tire.
+   \item Which tire each student picked.%Correct
+   \item How many students picked each tire.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Parameter}
+\question What is the parameter of interest in this study?
+\begin{enumerate}[A]
+   %\item How many students picked each tire.
+   \item The proportion of students in the class who picked the right front tire.
+   \item Which tire each student picked.
+   \item The long run probability that a student picks the right front tire.%Correct
+   \item The long run probability that more than 1/4 of the students will pick the right front tire.
+   \item $\hat{p}=\frac{14}{28}$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Hypotheses}
+\question What is the appropriate null hypothesis for this setting?
+\begin{enumerate}[A]
+   \item $H_0:\pi=0.5$
+   \item $H_a:\pi>0.25$
+   \item $H_0:\hat{p}=0.5$
+   \item In the long run, students will pick each tire equally often.%Correct, but this is stronger than pi=.25
+   \item In the long run, more students than chance predicts will pick the right front tire. 
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{$p$--value}
+
+\question Recall that the study had $\hat{p}=\frac{14}{28}$ students pick the right front tire. Shown below are 100 simulated values for $X=$ the number of students (out of 28) who picked the right front tire, assuming $\pi=0.25$. Use the results to estimate the $p$--value for this test of significance.
+
+\begin{multicols}{2}
+
+\begin{enumerate}[A]
+   \item $0$
+   \item $0.01$%correct
+   \item $0.03$
+   \item $0.58$
+   %\item None of the above
+\end{enumerate}
+
+\pic{tiresimulation.PNG}{.9}
+\end{multicols}
+
+\end{frame}
+
+\begin{frame}{Exploration 1.3 Facial Prototyping}
+
+\begin{stepitemize}
+   \item Do we have preconceived notions of what persons with a certain common name look like? 
+   \item For example, do people automatically construct an image in their head for a name like Sarah or Brian?
+   \item You will soon be shown a picture of two men named Bob and Tim, and you will be asked to decide who is on the left, Bob or Tim, based solely on the photos.
+\end{stepitemize}
+
+\end{frame}
+
+\begin{frame}{Data Collection Section 1.3}
+\question Who is on the left?
+\pic{timandbob.jpg}{.6}
+\begin{enumerate}[A]
+   \item Bob
+   \item Tim%more should chose Tim
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Sections 1.3 and 1.4}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Standardized statistic ($z$--score)
+    \item The mean of the null distribution
+    \item The standard deviation (SD) of the null distribution
+    \item One- or two-sided test
+    \item $p$-value
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

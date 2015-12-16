@@ -1,0 +1,213 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+
+\title{Sections 1.3 and 1.4}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{Trying to solve a problem before being taught the solution leads to better learning, even when errors are made in the attempt.}{Peter C. Brown, \textit{Make It Stick}}
+\end{frame}
+
+\begin{frame}{Strength of Evidence}
+\question Which standardized statistic (standardized sample proportion) gives you the strongest evidence against the null hypothesis for a two-tailed test?
+\begin{enumerate}[A]
+	\item $z = 1$
+    \item $z = 0$
+    \item $z = -3$ %Correct
+    \item $z = -1.8$
+    \item $z = 2.9$
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{True Statement}
+\question Identify the TRUE statement below.
+\begin{enumerate}[A]
+	\item As a $p$-value gets smaller, its corresponding standardized statistic gets closer to zero.
+    \item Large $\hat{p}$ values always correspond with large $p$-values.
+    \item A $p$-value can be negative.
+  	\item A standardized statistic can be negative. %Correct
+    \item We run tests of significance to determine whether $\pi$ is statistically significant.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Interpretting the $z$-score}
+\question Suppose that a standardized statistic (standardized sample proportion) for a study is calculated to be $z = -2.45$. Which of the following is the most appropriate interpretation of $z$?
+\begin{enumerate}[A]
+	\item The observed value of the sample proportion is 2.45 SDs above the hypothesized parameter value.
+    \item The observed value of the sample proportion is 2.45 times the SD of the null distribution.
+    \item The observed value of the sample proportion is 2.45 times the hypothesized parameter value.
+  	\item The observed value of the sample proportion is 2.45 SDs away from the hypothesized parameter value. %Correct
+    \item The study results are not statistically significant.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Racquet Spinning}
+Researchers wanted to investigate whether a spun tennis racquet is equally
+likely to land with the label facing up or down.
+\question Does this racquet spinning study call for a one-sided or a two-sided alternative?
+\begin{enumerate}[A]
+	\item One-sided - there is only one variable: how the label lands
+  \item Two-sided - there are 2 possible outcomes: up or down
+  \item One-sided - the researchers want to know whether the label is more likely to land face up
+  \item Two-sided - the researchers want to know whether the spinning process is fair or biased in either direction %Correct
+\end{enumerate}
+\end{frame}
+
+% \begin{frame}{Racquet Spinning (continued)}
+% \question Which of the following will always be true about the standardized statistic for the racquet spinning study?
+% \begin{enumerate}[A]
+% 	\item The standardized statistic increases as the sample proportion that land ``up” increases. %Correct
+%   \item The standardized statistic decreases as the sample proportion that land ``up” increases.
+%   \item The standardized statistic increases as the sample proportion that land ``up” gets farther from 0.5.
+%   \item The standardized statistic decreases as the sample proportion that land ``up” gets farther from 0.5.
+% \end{enumerate}
+% \end{frame}
+
+% \begin{frame}{Racquet Spinning (continued)}
+% \question Which of the following will always be true about the $p$-value for the racquet spinning study?
+% \begin{enumerate}[A]
+%   \item The $p$-value increases as the sample proportion that land ``up” increases.
+%   \item The $p$-value decreases as the sample proportion that land ``up” increases.
+%   \item The $p$-value increases as the sample proportion that land ``up” gets farther from 0.5.
+%   \item The $p$-value decreases as the sample proportion that land ``up” gets farther from 0.5. %Correct
+% \end{enumerate}
+% \end{frame}
+
+\begin{frame}{Setup}
+Many football bets include a \textquotedblleft
+point-spread\textquotedblright\ so that the team that is favored needs to win by more than that amount for a \textquotedblleft
+victory.\textquotedblright\ The point-spreads are designed by professional odds makers with the intention that the probability of the favored team winning by the required amount is 0.50. In a department that has a weekly pool, where members try to predict whether or not the favored team will \textquotedblleft beat the spread," Tom correctly predicted the \textquotedblleft point-spread victor\textquotedblright\ in 8 of 12 games (so $\hat{p}=\frac{8}{12}\approx 0.67$. Is this statistically significant evidence that Tom's probability of predicting a point-spread winner is larger than 50\%?
+\end{frame}
+
+\begin{frame}
+\question Shown below are 100 simulated values of $\hat{p}$ assuming $\pi=.5$ and $n=12$. Which of the following could be the $p$--value for our test of significance, $H_0:\pi=.5$ against $H_a:\pi>.5$?
+\begin{multicols}{2}
+\begin{enumerate}[A]
+   \item 0.93
+   \item 0.14
+   \item 0.21 % Correct
+   \item 0.50
+   \item 0.67
+\end{enumerate}
+\pic{pointspreadsim.PNG}{.9}
+\end{multicols}
+\end{frame}
+
+\begin{frame}
+\question Shown below are 100 simulated values of $\hat{p}$ assuming $\pi=.5$ and $n=12$. The summary statistics give $mean = 0.496$ and $SD = 0.149$. Which of the following is the (approximate) $z$--score for our study statistic $\hat{p}=.667$?
+\begin{multicols}{2}
+\begin{enumerate}[A]
+   \item $z=-2.66$%calculator mistake .667 - (.496 / .149)
+   \item $z=0$
+   \item $z=.027$%(.5 - .496) / .149
+   \item $z=1.04$%subtract s divide by mu
+   \item $z=1.15$%Correct 
+\end{enumerate}
+\pic{pointspreadsim.PNG}{.9}
+\end{multicols}
+\end{frame}
+
+\begin{frame}{Comparing Evidence}
+\question Similar to Exploration 1.2, you decide to test if people will pick tap water less often than expected ($H_0:\pi=1/3$ against $H_a:\pi<1/3$). You ask $n=30$ people to select the best tasting water (from three choices) and let $X=$ the number who chose tap water. Which of the following results gives the strongest evidence against the null hypothesis?
+\begin{enumerate}[A]
+   \item $p=.25$%
+   \item $\hat{p}=\frac{13}{30}$%
+   \item $X=9$ people chose tap water%
+   \item $z=-2.32$%Correct
+   \item $z=3$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Two Tailed $z$--scores}
+\question For Doris and Buzz ($H_0:\pi=1/2$ against $H_a:\pi>1/2$, with $n=16$ trials), the $z$--score for $\hat{p}=\frac{15}{16}$ is $z=3.5$. What happens to this $z$--score if the alternative is $H_a:\pi\neq 1/2$?
+\begin{enumerate}[A]
+   \item It does not change.%Correct
+   \item It doubles.%
+   \item It gets cut in half.%
+   \item You cannot tell.%
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Match Results to $z$--scores}
+\question For Doris and Buzz ($H_0:\pi=1/2$ against $H_a:\pi>1/2$, with $n=16$ trials), each of the $z$--scores on the right corresponds to one of the descriptions on the left. (Remember that the $z$--score for $\hat{p} = 15/16$ is $z = 3.5$.)
+
+\begin{multicols}{2}
+\begin{enumerate}
+   \item Buzz got 12 correct.%Correct
+   \item $\hat{p}=\frac{8}{16}$.% 
+   \item $p=0.773$.% 
+   \item $p=0.0013$.% 
+%\end{enumerate}
+
+\begin{enumerate}
+   \item $z=-0.5$
+   \item $z=0$
+   \item $z=2.0$
+   \item $z=3.0$
+\end{enumerate}
+\end{enumerate}
+\end{multicols}
+Which description on the left corresponds to
+$z=2.0$?
+%$z=0$?
+%$z=2.0$?
+%$z=-0.5$?
+\begin{enumerate}[A]
+   \item Description 1
+   \item Description 2
+   \item Description 3
+   \item Description 4
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Key Terms and Ideas to Understand in Section 1.5}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Normal distribution
+    \item Theory-based approach
+    \item Validity conditions for theory-based approach
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}

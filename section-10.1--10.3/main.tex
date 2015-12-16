@@ -1,0 +1,228 @@
+\documentclass[13pt]{beamer}
+
+\usetheme{Copenhagen}
+
+\usecolortheme[rgb={0.60884,0.1590909,0.23106061}]{structure} % Red colors
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{multicol}
+\usepackage{fmtcount}
+
+\newcounter{count}
+\addtocounter{count}{1}
+
+\newcommand{\quotes}[2]{\centering \Large{``#1"\\
+\vspace*{0.2in}
+\hspace*{0.5in} - #2}}
+
+\newcommand{\question}{ \textbf{(\decimal{count})} \stepcounter{count}}
+\newcommand{\pic}[2]{\hfill\includegraphics[scale=#2]{#1}\hspace*{\fill}}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{click}{\begin{enumerate}[A]}{\end{enumerate}}
+
+\title{Sections 10.1-10.3}
+\author{Chester Ismay, Tom Linton}
+\institute{Ripon College, Central College}
+\date{}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\begin{frame}{Learning Quote of the Day}
+\quotes{The brain is like a muscle. When it is in use we feel very good. Understanding is joyous.}{Carl Sagan}
+\end{frame}
+
+\begin{frame}{Association}
+\question For used cars that are for sale, if one studies the association between the mileage of the car (as indicated by the odometer) and asking price, what direction would you expect the association to have?
+
+\begin{click}
+   \item Negative% Correct
+   \item No Association
+   \item Positive
+   \item You cannot tell
+   \item I am unsure
+\end{click}
+\end{frame}
+
+\begin{frame}{Association}
+\question For new employees, if a company makes a scatterplot of $x =$ hours spent training and $y =$ number of mistakes made the first day after training, what direction would you expect the association to have?
+
+\begin{click}
+   \item Negative% Correct
+   \item No Association
+   \item Positive
+   \item You cannot tell
+   \item I am unsure
+\end{click}
+\end{frame}
+
+\begin{frame}{Association}
+\question Which of the following pairs of variables would you expect to have the weakest association (correlation near zero)?
+
+\begin{click}
+   \item For baseball players, number of at bats and number of hits.
+   \item For colleges, the winning percentage of the volleyball team and the number of fulltime students.% Correct
+   \item Length of a race and average velocity of runners in the race.
+   \item For cities, distance to Milwaukee and airfare from Milwaukee to the city.
+   \item All of the above would have fairly strong associations.
+\end{click}
+\end{frame}
+
+\begin{frame}{Correlation}
+\question If the Ripon College golf team played a two--day tournament where each golfer scored 2 strokes lower on day 2 then they did on day 1, what would be the value of the correlation coefficient between $x =$ score on day 1 and $y =$ score on day 2?
+
+\begin{click}
+   \item $r = -2$, since day 2 scores are lower by 2 strokes.
+   \item $r = -1$, since this describes a line with negative slope.
+   \item $-1 \leq r \leq 1$, this is all one can say here.
+   \item $r = 1$, since this describes a line with positive slope.% Correct y = 1*x - 2
+   \item $r > 0$, this describes a positive association but the strength is unclear.
+\end{click}
+\end{frame}
+
+\begin{frame}{Setup}
+%
+%Print this?
+%
+In a study of legibility and visibility of highway signs, a Pennsylvania research firm determined the maximum distance (in feet) at which each of 15 drivers could read a newly designed highway sign. The firm also recorded the age (in years) of each of the drivers. The 15 drivers in the study ranged from 18 to 82 years old. The firm wanted to investigate if there was an association between a driver's age and the maximum distance from which they could read the new style of sign. They believed that younger drivers could read the sign from a farther distance than older drivers.
+\end{frame}
+
+\begin{frame}{Setup}
+%
+%Print this?
+%
+A scatterplot of the data is shown here.
+\begin{center}
+\pic{highwayscatterplot.PNG}{1.0}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Variables}
+\question What is the explanatory variable?
+
+\begin{click}
+   \item The age of the drivers.% Correct
+   \item The maximum distance of readability.
+   \item Legibility and visibility of highway signs.
+   \item If reading distance decreases with age.
+   \item The average age of the drivers.
+\end{click}
+\end{frame}
+
+\begin{frame}{Correlation}
+\question A scatterplot of the data is shown below. Which of the following could be the value of the correlation coefficient for this study?
+
+\begin{columns}[onlytextwidth]
+\begin{column}{.35\textwidth}
+   \begin{click}
+      \item $r = 0.9$
+      \item $r =0.3$
+      \item $r = 0$
+      %\item $r = -0.1$
+      \item $r = -0.3$
+      \item $r = -0.9$% Correct
+   \end{click}
+\end{column}
+\begin{column}{.65\textwidth}
+      \pic{highwayscatterplot.PNG}{0.9}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Strength of Association}
+\question Describe the strength of the linear association between age and reading distance.
+
+\begin{click}
+   \item Strong% Correct
+   \item Moderate% OK
+   \item Weak
+   \item Negative
+   \item Highly curved
+\end{click}
+\end{frame}
+
+\begin{frame}{Slope}
+\question The least squares regression equation for predicting reading distance (in feet) from age (in years) is $\widehat{distance} = 561.40 - 2.86\,age$. Which is the best (most complete) interpretation of the slope of this line?
+
+\begin{click}
+   \item As age increases, the maximal reading distance drops.
+   \item A newborn could read the sign from about 561 feet away.
+   \item For each additional year in age, the predicted maximal reading distance decreases by 2.86 feet on average.% Correct
+   \item As the age of drivers increases from 18 to 82 years old, the reading distance drops by 286\%.
+   \item Each increase of one year in age is associated with an average predicted decrease in reading distance of 2.86\%.
+\end{click}
+\end{frame}
+
+\begin{frame}{Setup}
+%
+% Print this?
+%
+Based on data from early in the 2004 PGA season, the least squares regression equation for predicting a professional golfer's scoring average (in strokes per round, recall that low scores are better in golf), based on their average driving distance (in yards) is $\widehat{score} = 77.79 - 0.025 \, drivingDistance$, with $r = 0.2655$ and $r^2 = 0.07$. A simulated significance test to help decide if the population correlation is zero or not, gave $p = 0.017$.
+\end{frame}
+
+\begin{frame}{$p$--value}
+\question Based on the summary statistics given, what does this small $p$--value ($p = 0.017$) reveal?
+\begin{click}
+   \item It reveals evidence of a strong association.
+   \item It reveals strong evidence of an association.% Correct
+   \item It reveals strong evidence of a strong association.
+   \item It reveals weak evidence of an association.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+\begin{frame}{Interpret summary statistics}
+\question Based on the summary statistics given, do these data suggest that one can significantly improve the prediction of a golfer's scoring average by using their average driving distance, as opposed to just using the overall scoring average for all PGA golfers?
+\begin{click}
+   \item Yes, the $p$--value is small, so the results are significant.
+   \item Yes, the slope is negative, so longer drives are associated with lower scoring averages.
+   \item No, the $p$--value is small, so a correlation of zero is plausible.
+   \item Not much will be gained since $r^2 = 0.07$.% Correct
+   \item You need more information to decide.
+\end{click}
+\end{frame}
+
+%Interpret r^2 question
+\begin{frame}{Interpret coefficient of determination}
+\question What is the best interpretation of the $r^2 = 0.07$ value in this problem?
+\begin{click}
+   \item The correlation between scoring average and driving distance.
+   \item An increase of one unit in driving distance corresponds to $r^2$ units in scoring average
+   \item The percentage of total variation in the scoring average that is explained by the linear relationship with driving distance. %Correct
+   \item Two of the above are correct.
+   \item None of the above.
+\end{click}
+\end{frame}
+
+
+\begin{frame}{Key Terms and Ideas to Understand in Chapter 10}
+%\begin{multicols}{2}
+\begin{itemize}
+	\item Correlation coefficient
+    \item Extrapolation
+    \item Influential observations
+    \item $r$ versus $\rho$
+    \item $b$ versus $\beta$
+    \item Residuals
+    \item Slope
+    \item Tactile experiment for simulation
+    \item $y$-intercept
+\end{itemize}
+%\end{multicols}
+\end{frame}
+
+
+\end{document}
